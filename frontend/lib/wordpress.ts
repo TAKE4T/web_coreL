@@ -86,6 +86,10 @@ export async function getPosts(params: {
     };
   } catch (error) {
     console.error('Error fetching posts:', error);
+    console.error('API URL:', API_URL);
+    if (error instanceof Error) {
+      console.error('Error message:', error.message);
+    }
     return { posts: [], total: 0, totalPages: 0 };
   }
 }
@@ -104,7 +108,8 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 
     return null;
   } catch (error) {
-    console.error('Error fetching post by slug:', error);
+    console.error('Error fetching post by slug:', slug, error);
+    console.error('API URL:', API_URL);
     return null;
   }
 }
@@ -118,7 +123,8 @@ export async function getPostById(id: number): Promise<Post | null> {
     const response = await axios.get(`${API_URL}/posts/${id}${separator}_embed=true`);
     return response.data;
   } catch (error) {
-    console.error('Error fetching post by ID:', error);
+    console.error('Error fetching post by ID:', id, error);
+    console.error('API URL:', API_URL);
     return null;
   }
 }
@@ -133,6 +139,7 @@ export async function getCategories(): Promise<Category[]> {
     return response.data;
   } catch (error) {
     console.error('Error fetching categories:', error);
+    console.error('API URL:', API_URL);
     return [];
   }
 }
