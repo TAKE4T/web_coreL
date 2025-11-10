@@ -104,6 +104,18 @@ export default async function Home() {
                 ))}
               </div>
             </section>
+
+            {/* 他の記事セクション */}
+            <section className="mb-6">
+              <div className="mb-4 border-b-2 border-red-600 pb-2">
+                <h2 className="text-lg font-bold text-gray-900">他の記事</h2>
+              </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {posts.slice(21, 27).map((post) => (
+                  <ArticleCard key={post.id} post={post} layout="medium" />
+                ))}
+              </div>
+            </section>
           </div>
 
           {/* サイドバー */}
