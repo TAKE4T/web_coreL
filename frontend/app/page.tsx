@@ -91,6 +91,19 @@ export default async function Home() {
                 </div>
               </section>
             )}
+
+            {/* 特集セクション */}
+            <section className="mb-6">
+              <div className="mb-4 border-b-2 border-red-600 pb-2">
+                <h2 className="text-lg font-bold text-gray-900">特集</h2>
+              </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {/* 特集記事をここに配置可能 */}
+                {featuredPosts.slice(0, 6).map((post) => (
+                  <ArticleCard key={post.id} post={post} layout="medium" />
+                ))}
+              </div>
+            </section>
           </div>
 
           {/* サイドバー */}
