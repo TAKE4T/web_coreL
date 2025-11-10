@@ -163,15 +163,6 @@ export async function getPosts(params: {
             }
           }
         }
-        postsConnection(where: {
-          categoryIn: $categoryIn
-          search: $search
-          status: PUBLISH
-        }) {
-          pageInfo {
-            total
-          }
-        }
       }
     `;
 
@@ -187,8 +178,8 @@ export async function getPosts(params: {
 
     const posts = data.posts.nodes || [];
 
-    // totalを取得
-    const total = data.postsConnection?.pageInfo?.total || posts.length;
+    // totalを取得（簡易版: 取得した投稿数をtotalとして使用）
+    const total = posts.length;
     const totalPages = Math.ceil(total / perPage);
 
     console.log('GraphQL API URL:', GRAPHQL_URL);
