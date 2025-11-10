@@ -16,9 +16,13 @@ export async function generateStaticParams() {
   }));
 }
 
+// パラメータの型定義
+type PageParams = Promise<{ slug: string }>;
+
 // メタデータ生成
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: PageParams }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     return {
@@ -32,8 +36,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug);
+export default async function PostPage({ params }: { params: PageParams }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     notFound();
