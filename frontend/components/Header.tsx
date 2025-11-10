@@ -26,7 +26,7 @@ export default function Header() {
           <Link href="/contact" className="text-gray-600 hover:text-gray-900">
             お問い合わせ
           </Link>
-          <Link href="/newsletter" className="text-gray-600 hover:text-gray-900">
+          <Link href="/newsletter" className="text-red-600 hover:text-red-700 font-bold">
             メルマガ登録
           </Link>
         </div>
@@ -68,8 +68,8 @@ export default function Header() {
           <Link href="/" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
             トップ
           </Link>
-          <Link href="/category/framework" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            フレームワーク
+          <Link href="/category/copywriting" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            コピーライティング
           </Link>
           <Link href="/category/marketing" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
             マーケティング
@@ -77,8 +77,11 @@ export default function Header() {
           <Link href="/category/design" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
             デザイン
           </Link>
-          <Link href="/category/business" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            ビジネス
+          <Link href="/category/business-model" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            ビジネスモデル
+          </Link>
+          <Link href="/category/website-creation" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            Webサイト制作
           </Link>
           <Link href="/category/case-study" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
             事例

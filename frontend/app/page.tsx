@@ -140,22 +140,6 @@ export default async function Home() {
                 </div>
               )}
 
-              {/* CTA */}
-              <div className="border-2 border-red-600 bg-red-50 p-6">
-                <h3 className="mb-2 text-base font-bold text-gray-900">
-                  事業診断を受けてみる
-                </h3>
-                <p className="mb-4 text-sm text-gray-700 leading-relaxed">
-                  15分で完了する無料診断で、あなたのビジネスを可視化。専用レポートをお届けします。
-                </p>
-                <a
-                  href="/diagnosis"
-                  className="block bg-red-600 py-3 text-center text-sm font-bold text-white hover:bg-red-700 transition-colors"
-                >
-                  無料診断を始める
-                </a>
-              </div>
-
               {/* バナー広告エリア */}
               <div className="border border-gray-200 bg-gray-100 p-4">
                 <div className="aspect-[300/250] flex items-center justify-center bg-white text-gray-400 text-sm">
