@@ -64,6 +64,27 @@ export interface Category {
   slug: string;
 }
 
+export interface Page {
+  id: string;
+  databaseId: number;
+  date: string;
+  modified: string;
+  slug: string;
+  status: string;
+  title: string;
+  content: string;
+  featuredImage?: {
+    node: {
+      sourceUrl: string;
+      altText: string;
+      mediaDetails: {
+        width: number;
+        height: number;
+      };
+    };
+  };
+}
+
 /**
  * 記事一覧を取得
  */
@@ -345,6 +366,86 @@ export async function getPopularPosts(limit: number = 5): Promise<Post[]> {
     return posts;
   } catch (error) {
     console.error('Error fetching popular posts:', error);
+    return [];
+  }
+}
+
+/**
+ * 固定ページをスラッグで取得
+ */
+export async function getPageBySlug(slug: string): Promise<Page | null> {
+  try {
+    const query = gql`
+      query GetPageBySlug($slug: ID!) {
+        page(id: $slug, idType: URI) {
+          id
+          databaseId
+          date
+          modified
+          slug
+          status
+          title
+          content
+          featuredImage {
+            node {
+              sourceUrl
+              altText
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+        }
+      }
+    `;
+
+    const data: any = await client.request(query, { slug });
+    return data.page || null;
+  } catch (error) {
+    console.error('Error fetching page by slug:', slug, error);
+    console.error('GraphQL URL:', GRAPHQL_URL);
+    return null;
+  }
+}
+
+/**
+ * 全固定ページを取得
+ */
+export async function getPages(): Promise<Page[]> {
+  try {
+    const query = gql`
+      query GetPages {
+        pages(first: 100, where: { status: PUBLISH }) {
+          nodes {
+            id
+            databaseId
+            date
+            modified
+            slug
+            status
+            title
+            content
+            featuredImage {
+              node {
+                sourceUrl
+                altText
+                mediaDetails {
+                  width
+                  height
+                }
+              }
+            }
+          }
+        }
+      }
+    `;
+
+    const data: any = await client.request(query);
+    return data.pages.nodes || [];
+  } catch (error) {
+    console.error('Error fetching pages:', error);
+    console.error('GraphQL URL:', GRAPHQL_URL);
     return [];
   }
 }
