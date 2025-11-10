@@ -26,11 +26,8 @@ export default function Header() {
           <Link href="/contact" className="text-gray-600 hover:text-gray-900">
             お問い合わせ
           </Link>
-          <Link
-            href="/diagnosis"
-            className="rounded bg-orange-500 px-3 py-1 text-white hover:bg-orange-600 transition-colors text-xs font-medium"
-          >
-            無料診断に登録
+          <Link href="/newsletter" className="text-gray-600 hover:text-gray-900">
+            メルマガ登録
           </Link>
         </div>
 
