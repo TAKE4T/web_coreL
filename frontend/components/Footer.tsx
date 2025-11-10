@@ -118,7 +118,7 @@ export default function Footer() {
               </a>
             </div>
             <p className="text-xs text-gray-500">
-              &copy; {currentYear} コア・ランゲージ・ハブ. All rights reserved.
+              &copy; {currentYear} 東洋経済オンライン. All rights reserved.
             </p>
           </div>
         </div>
