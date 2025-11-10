@@ -110,24 +110,28 @@ export default async function Home() {
           <aside className="lg:col-span-3">
             <div className="space-y-6">
               {/* ランキング */}
-              {rankingPosts.length > 0 && (
-                <div className="border border-gray-200 bg-white">
-                  <div className="border-b border-gray-200 bg-gray-50 px-4 py-3">
-                    <h3 className="text-base font-bold text-gray-900">アクセスランキング</h3>
-                  </div>
-                  <div className="p-4 space-y-4">
-                    {rankingPosts.slice(0, 10).map((post, index) => (
-                      <ArticleCard
-                        key={post.id}
-                        post={post}
-                        layout="list"
-                        showImage={false}
-                        rank={index + 1}
-                      />
-                    ))}
-                  </div>
+              <div className="border border-gray-200 bg-white">
+                <div className="border-b border-gray-200 bg-gray-50 px-4 py-3">
+                  <h3 className="text-base font-bold text-gray-900">アクセスランキング</h3>
                 </div>
-              )}
+                <div className="p-4">
+                  {rankingPosts.length > 0 ? (
+                    <div className="space-y-4">
+                      {rankingPosts.slice(0, 10).map((post, index) => (
+                        <ArticleCard
+                          key={post.id}
+                          post={post}
+                          layout="list"
+                          showImage={false}
+                          rank={index + 1}
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-gray-500">記事がありません</p>
+                  )}
+                </div>
+              </div>
 
               {/* カテゴリー */}
               {categories.length > 0 && (
