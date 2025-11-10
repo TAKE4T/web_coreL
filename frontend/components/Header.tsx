@@ -1,6 +1,20 @@
+'use client';
+
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState, FormEvent } from 'react';
 
 export default function Header() {
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (e: FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
+
   return (
     <header className="border-b border-gray-200 bg-white shadow-sm sticky top-0 z-50">
       <div className="mx-auto max-w-[1200px] px-4">
@@ -29,20 +43,22 @@ export default function Header() {
           </Link>
 
           {/* 検索バー */}
-          <div className="hidden md:flex flex-1 max-w-sm mx-6">
+          <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-sm mx-6">
             <div className="relative w-full">
               <input
                 type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="キーワードで記事を検索"
                 className="w-full rounded border border-gray-300 px-3 py-1.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
               />
-              <button className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+              <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </button>
             </div>
-          </div>
+          </form>
 
           {/* 右側ボタン */}
           <div className="flex items-center gap-2 text-xs">
