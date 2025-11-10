@@ -2,6 +2,14 @@ import axios from 'axios';
 
 const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://wpcore-l.tooling-hub.com/wp-json/wp/v2';
 
+// Axiosインスタンスの作成（User-Agentヘッダーを追加）
+const api = axios.create({
+  headers: {
+    'User-Agent': 'Mozilla/5.0 (compatible; NextJS/16.0; +https://core-l.tooling-hub.com)',
+    'Accept': 'application/json',
+  },
+});
+
 export interface Post {
   id: number;
   date: string;
@@ -77,7 +85,7 @@ export async function getPosts(params: {
 
     // URLにすでに?が含まれている場合は&、そうでなければ?を使う
     const separator = API_URL.includes('?') ? '&' : '?';
-    const response = await axios.get(`${API_URL}/posts${separator}${queryParams.toString()}`);
+    const response = await api.get(`${API_URL}/posts${separator}${queryParams.toString()}`);
 
     return {
       posts: response.data,
@@ -100,7 +108,7 @@ export async function getPosts(params: {
 export async function getPostBySlug(slug: string): Promise<Post | null> {
   try {
     const separator = API_URL.includes('?') ? '&' : '?';
-    const response = await axios.get(`${API_URL}/posts${separator}slug=${slug}&_embed=true`);
+    const response = await api.get(`${API_URL}/posts${separator}slug=${slug}&_embed=true`);
 
     if (response.data && response.data.length > 0) {
       return response.data[0];
@@ -120,7 +128,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 export async function getPostById(id: number): Promise<Post | null> {
   try {
     const separator = API_URL.includes('?') ? '&' : '?';
-    const response = await axios.get(`${API_URL}/posts/${id}${separator}_embed=true`);
+    const response = await api.get(`${API_URL}/posts/${id}${separator}_embed=true`);
     return response.data;
   } catch (error) {
     console.error('Error fetching post by ID:', id, error);
@@ -135,7 +143,7 @@ export async function getPostById(id: number): Promise<Post | null> {
 export async function getCategories(): Promise<Category[]> {
   try {
     const separator = API_URL.includes('?') ? '&' : '?';
-    const response = await axios.get(`${API_URL}/categories${separator}per_page=100`);
+    const response = await api.get(`${API_URL}/categories${separator}per_page=100`);
     return response.data;
   } catch (error) {
     console.error('Error fetching categories:', error);
