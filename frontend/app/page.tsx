@@ -45,8 +45,8 @@ export default async function Home() {
   // メイン記事（5-16件目）
   const mainPosts = posts.slice(4, 16);
 
-  // ランキング記事（17-26件目）
-  const rankingPosts = posts.slice(16, 26);
+  // ランキング記事（トップ5の最新記事）
+  const rankingPosts = posts.slice(0, 5);
 
   return (
     <div className="min-h-screen bg-white">
