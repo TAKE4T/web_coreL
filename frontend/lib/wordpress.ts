@@ -1,56 +1,63 @@
-import axios from 'axios';
+import { GraphQLClient, gql } from 'graphql-request';
 
-const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://wpcore-l.tooling-hub.com/wp-json/wp/v2';
+const GRAPHQL_URL = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL || 'https://wpcore-l.tooling-hub.com/graphql';
 
-// Axiosインスタンスの作成（User-Agentヘッダーを追加）
-const api = axios.create({
+// GraphQLクライアントの作成
+const client = new GraphQLClient(GRAPHQL_URL, {
   headers: {
     'User-Agent': 'Mozilla/5.0 (compatible; NextJS/16.0; +https://core-l.tooling-hub.com)',
-    'Accept': 'application/json',
   },
 });
 
 export interface Post {
-  id: number;
+  id: string;
+  databaseId: number;
   date: string;
   modified: string;
   slug: string;
   status: string;
-  title: {
-    rendered: string;
+  title: string;
+  content: string;
+  excerpt: string;
+  author?: {
+    node: {
+      id: string;
+      name: string;
+      avatar: {
+        url: string;
+      };
+    };
   };
-  content: {
-    rendered: string;
+  featuredImage?: {
+    node: {
+      sourceUrl: string;
+      altText: string;
+      mediaDetails: {
+        width: number;
+        height: number;
+      };
+    };
   };
-  excerpt: {
-    rendered: string;
-  };
-  author: number;
-  featured_media: number;
-  categories: number[];
-  tags: number[];
-  _embedded?: {
-    'wp:featuredmedia'?: Array<{
-      source_url: string;
-      alt_text: string;
-    }>;
-    'wp:term'?: Array<Array<{
-      id: number;
+  categories?: {
+    nodes: Array<{
+      id: string;
+      databaseId: number;
       name: string;
       slug: string;
-    }>>;
-    author?: Array<{
-      id: number;
+    }>;
+  };
+  tags?: {
+    nodes: Array<{
+      id: string;
       name: string;
-      avatar_urls: {
-        [key: string]: string;
-      };
+      slug: string;
     }>;
   };
 }
 
 export interface Category {
-  id: number;
+  id: string;
+  databaseId: number;
   count: number;
   description: string;
   name: string;
@@ -69,32 +76,102 @@ export async function getPosts(params: {
   try {
     const { page = 1, perPage = 10, categories, search } = params;
 
-    const queryParams = new URLSearchParams({
-      page: page.toString(),
-      per_page: perPage.toString(),
-      _embed: 'true',
+    // カテゴリーIDをGraphQLの形式に変換
+    const categoryIn = categories && categories.length > 0 ? categories : undefined;
+
+    const query = gql`
+      query GetPosts($first: Int!, $after: String, $categoryIn: [ID], $search: String) {
+        posts(
+          first: $first
+          after: $after
+          where: {
+            categoryIn: $categoryIn
+            search: $search
+            status: PUBLISH
+          }
+        ) {
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+            startCursor
+            endCursor
+          }
+          nodes {
+            id
+            databaseId
+            date
+            modified
+            slug
+            status
+            title
+            content
+            excerpt
+            author {
+              node {
+                id
+                name
+                avatar {
+                  url
+                }
+              }
+            }
+            featuredImage {
+              node {
+                sourceUrl
+                altText
+                mediaDetails {
+                  width
+                  height
+                }
+              }
+            }
+            categories {
+              nodes {
+                id
+                databaseId
+                name
+                slug
+              }
+            }
+            tags {
+              nodes {
+                id
+                name
+                slug
+              }
+            }
+          }
+        }
+      }
+    `;
+
+    // ページネーション用のカーソル計算（簡易版）
+    const after = page > 1 ? btoa(`arrayconnection:${(page - 1) * perPage - 1}`) : undefined;
+
+    const data: any = await client.request(query, {
+      first: perPage,
+      after,
+      categoryIn,
+      search,
     });
 
-    if (categories && categories.length > 0) {
-      queryParams.append('categories', categories.join(','));
-    }
+    const posts = data.posts.nodes || [];
 
-    if (search) {
-      queryParams.append('search', search);
-    }
+    // totalとtotalPagesは概算（GraphQLのカーソルベースなので正確な総数は取得困難）
+    const total = posts.length;
+    const totalPages = Math.ceil(total / perPage);
 
-    // URLにすでに?が含まれている場合は&、そうでなければ?を使う
-    const separator = API_URL.includes('?') ? '&' : '?';
-    const response = await api.get(`${API_URL}/posts${separator}${queryParams.toString()}`);
+    console.log('GraphQL API URL:', GRAPHQL_URL);
+    console.log('取得した記事数:', posts.length);
 
     return {
-      posts: response.data,
-      total: parseInt(response.headers['x-wp-total'] || '0'),
-      totalPages: parseInt(response.headers['x-wp-totalpages'] || '0'),
+      posts,
+      total,
+      totalPages,
     };
   } catch (error) {
     console.error('Error fetching posts:', error);
-    console.error('API URL:', API_URL);
+    console.error('GraphQL URL:', GRAPHQL_URL);
     if (error instanceof Error) {
       console.error('Error message:', error.message);
     }
@@ -107,17 +184,61 @@ export async function getPosts(params: {
  */
 export async function getPostBySlug(slug: string): Promise<Post | null> {
   try {
-    const separator = API_URL.includes('?') ? '&' : '?';
-    const response = await api.get(`${API_URL}/posts${separator}slug=${slug}&_embed=true`);
+    const query = gql`
+      query GetPostBySlug($slug: ID!) {
+        post(id: $slug, idType: SLUG) {
+          id
+          databaseId
+          date
+          modified
+          slug
+          status
+          title
+          content
+          excerpt
+          author {
+            node {
+              id
+              name
+              avatar {
+                url
+              }
+            }
+          }
+          featuredImage {
+            node {
+              sourceUrl
+              altText
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+          categories {
+            nodes {
+              id
+              databaseId
+              name
+              slug
+            }
+          }
+          tags {
+            nodes {
+              id
+              name
+              slug
+            }
+          }
+        }
+      }
+    `;
 
-    if (response.data && response.data.length > 0) {
-      return response.data[0];
-    }
-
-    return null;
+    const data: any = await client.request(query, { slug });
+    return data.post || null;
   } catch (error) {
     console.error('Error fetching post by slug:', slug, error);
-    console.error('API URL:', API_URL);
+    console.error('GraphQL URL:', GRAPHQL_URL);
     return null;
   }
 }
@@ -127,12 +248,61 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
  */
 export async function getPostById(id: number): Promise<Post | null> {
   try {
-    const separator = API_URL.includes('?') ? '&' : '?';
-    const response = await api.get(`${API_URL}/posts/${id}${separator}_embed=true`);
-    return response.data;
+    const query = gql`
+      query GetPostById($id: ID!) {
+        post(id: $id, idType: DATABASE_ID) {
+          id
+          databaseId
+          date
+          modified
+          slug
+          status
+          title
+          content
+          excerpt
+          author {
+            node {
+              id
+              name
+              avatar {
+                url
+              }
+            }
+          }
+          featuredImage {
+            node {
+              sourceUrl
+              altText
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+          categories {
+            nodes {
+              id
+              databaseId
+              name
+              slug
+            }
+          }
+          tags {
+            nodes {
+              id
+              name
+              slug
+            }
+          }
+        }
+      }
+    `;
+
+    const data: any = await client.request(query, { id: id.toString() });
+    return data.post || null;
   } catch (error) {
     console.error('Error fetching post by ID:', id, error);
-    console.error('API URL:', API_URL);
+    console.error('GraphQL URL:', GRAPHQL_URL);
     return null;
   }
 }
@@ -142,12 +312,26 @@ export async function getPostById(id: number): Promise<Post | null> {
  */
 export async function getCategories(): Promise<Category[]> {
   try {
-    const separator = API_URL.includes('?') ? '&' : '?';
-    const response = await api.get(`${API_URL}/categories${separator}per_page=100`);
-    return response.data;
+    const query = gql`
+      query GetCategories {
+        categories(first: 100, where: { hideEmpty: true }) {
+          nodes {
+            id
+            databaseId
+            count
+            description
+            name
+            slug
+          }
+        }
+      }
+    `;
+
+    const data: any = await client.request(query);
+    return data.categories.nodes || [];
   } catch (error) {
     console.error('Error fetching categories:', error);
-    console.error('API URL:', API_URL);
+    console.error('GraphQL URL:', GRAPHQL_URL);
     return [];
   }
 }

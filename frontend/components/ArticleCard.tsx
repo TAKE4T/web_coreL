@@ -17,8 +17,9 @@ export default function ArticleCard({
   showImage = true,
   rank
 }: ArticleCardProps) {
-  const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/placeholder-image.jpg';
-  const categories = post._embedded?.['wp:term']?.[0] || [];
+  // GraphQL形式のデータから画像URLを取得
+  const imageUrl = post.featuredImage?.node?.sourceUrl || '/placeholder-image.jpg';
+  const categories = post.categories?.nodes || [];
   const mainCategory = categories[0];
 
   const formattedDate = new Date(post.date).toLocaleDateString('ja-JP', {
@@ -37,10 +38,9 @@ export default function ArticleCard({
             </span>
           )}
           <div className="flex-1 min-w-0">
-            <h3
-              className="line-clamp-2 text-sm leading-snug text-gray-900 group-hover:text-red-600 transition-colors"
-              dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-            />
+            <h3 className="line-clamp-2 text-sm leading-snug text-gray-900 group-hover:text-red-600 transition-colors">
+              {post.title}
+            </h3>
             <time className="text-xs text-gray-500 mt-1 block">{formattedDate}</time>
           </div>
         </article>
@@ -57,7 +57,7 @@ export default function ArticleCard({
             <div className="relative aspect-[16/9] overflow-hidden">
               <Image
                 src={imageUrl}
-                alt={post.title.rendered}
+                alt={post.featuredImage?.node?.altText || post.title}
                 fill
                 sizes="300px"
                 className="object-cover"
@@ -70,10 +70,9 @@ export default function ArticleCard({
                 {mainCategory.name}
               </span>
             )}
-            <h3
-              className="line-clamp-3 text-sm font-bold leading-snug text-gray-900 group-hover:text-red-600 transition-colors"
-              dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-            />
+            <h3 className="line-clamp-3 text-sm font-bold leading-snug text-gray-900 group-hover:text-red-600 transition-colors">
+              {post.title}
+            </h3>
           </div>
         </article>
       </Link>
@@ -89,7 +88,7 @@ export default function ArticleCard({
             <div className="relative aspect-[16/9] overflow-hidden">
               <Image
                 src={imageUrl}
-                alt={post.title.rendered}
+                alt={post.featuredImage?.node?.altText || post.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
                 priority={priority}
@@ -103,10 +102,9 @@ export default function ArticleCard({
                 {mainCategory.name}
               </span>
             )}
-            <h3
-              className="line-clamp-3 text-base font-bold leading-snug text-gray-900 group-hover:text-red-600 transition-colors mb-2"
-              dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-            />
+            <h3 className="line-clamp-3 text-base font-bold leading-snug text-gray-900 group-hover:text-red-600 transition-colors mb-2">
+              {post.title}
+            </h3>
             <time className="text-xs text-gray-500">{formattedDate}</time>
           </div>
         </article>
@@ -122,7 +120,7 @@ export default function ArticleCard({
           <div className="relative aspect-[16/9] overflow-hidden">
             <Image
               src={imageUrl}
-              alt={post.title.rendered}
+              alt={post.featuredImage?.node?.altText || post.title}
               fill
               sizes="(max-width: 768px) 100vw, 800px"
               priority={priority}
@@ -136,14 +134,12 @@ export default function ArticleCard({
               {mainCategory.name}
             </span>
           )}
-          <h3
-            className="line-clamp-3 text-xl font-bold leading-tight text-gray-900 group-hover:text-red-600 transition-colors mb-3"
-            dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-          />
-          <div
-            className="line-clamp-2 text-sm text-gray-600 mb-3"
-            dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-          />
+          <h3 className="line-clamp-3 text-xl font-bold leading-tight text-gray-900 group-hover:text-red-600 transition-colors mb-3">
+            {post.title}
+          </h3>
+          <div className="line-clamp-2 text-sm text-gray-600 mb-3">
+            {post.excerpt}
+          </div>
           <time className="text-xs text-gray-500">{formattedDate}</time>
         </div>
       </article>
