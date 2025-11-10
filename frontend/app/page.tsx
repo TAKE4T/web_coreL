@@ -42,11 +42,11 @@ export default async function Home() {
   // 特集記事（2-4件目）
   const featuredPosts = posts.slice(1, 4);
 
-  // メイン記事（5-16件目）
-  const mainPosts = posts.slice(4, 16);
+  // メイン記事（5-14件目）
+  const mainPosts = posts.slice(4, 14);
 
-  // ランキング記事（17-26件目）
-  const rankingPosts = posts.slice(16, 26);
+  // ランキング記事（トップ10の最新記事）
+  const rankingPosts = posts.slice(0, 10);
 
   return (
     <div className="min-h-screen bg-white">
