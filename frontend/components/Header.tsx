@@ -62,12 +62,7 @@ export default function Header() {
 
           {/* 右側ボタン */}
           <div className="flex items-center gap-2 text-xs">
-            <Link
-              href="/diagnosis"
-              className="hidden md:block rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700 transition-colors"
-            >
-              無料診断
-            </Link>
+            {/* 削除: 重複リンクのため */}
           </div>
         </div>
 
