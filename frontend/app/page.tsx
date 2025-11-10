@@ -117,7 +117,7 @@ export default async function Home() {
                 <div className="p-4">
                   {rankingPosts.length > 0 ? (
                     <div className="space-y-4">
-                      {rankingPosts.slice(0, 10).map((post, index) => (
+                      {rankingPosts.slice(0, 5).map((post, index) => (
                         <ArticleCard
                           key={post.id}
                           post={post}
