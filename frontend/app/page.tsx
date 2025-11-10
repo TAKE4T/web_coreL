@@ -12,7 +12,7 @@ export default async function Home() {
 
   // デバッグ情報（開発環境のみ）
   if (process.env.NODE_ENV === 'development') {
-    console.log('WordPress API URL:', process.env.NEXT_PUBLIC_WORDPRESS_API_URL);
+    console.log('WordPress GraphQL URL:', process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL);
     console.log('取得した記事数:', posts.length, '/ 合計:', total);
     console.log('カテゴリー数:', categories.length);
   }
@@ -27,7 +27,7 @@ export default async function Home() {
             <h2 className="mb-2 text-xl font-bold text-yellow-900">記事が見つかりません</h2>
             <p className="text-yellow-800">WordPressに記事を追加してください。</p>
             <p className="mt-2 text-sm text-yellow-700">
-              API URL: {process.env.NEXT_PUBLIC_WORDPRESS_API_URL || '未設定'}
+              GraphQL URL: {process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL || '未設定'}
             </p>
           </div>
         </main>
