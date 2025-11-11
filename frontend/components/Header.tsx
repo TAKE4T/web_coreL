@@ -71,20 +71,20 @@ export default function Header() {
           <Link href="/category/copywriting" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
             コピーライティング
           </Link>
-          <Link href="/category/marketing" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            マーケティング
-          </Link>
-          <Link href="/category/design" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            デザイン
-          </Link>
           <Link href="/category/business-model" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
             ビジネスモデル
           </Link>
-          <Link href="/category/case-study" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            事例
+          <Link href="/category/design-copy" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            デザインコピー
           </Link>
-          <Link href="/category/interview" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            インタビュー
+          <Link href="/category/learning" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            学び
+          </Link>
+          <Link href="/category/marketing-tools" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            マーケティングツール
+          </Link>
+          <Link href="/category/book-review" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            書籍紹介
           </Link>
         </nav>
       </div>

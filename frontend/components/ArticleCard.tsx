@@ -27,6 +27,11 @@ export default function ArticleCard({
     day: 'numeric',
   });
 
+  // HTMLタグを除去して抜粋を取得
+  const getPlainTextExcerpt = (excerpt: string) => {
+    return excerpt.replace(/<[^>]*>/g, '').trim();
+  };
+
   // リストレイアウト（サイドバー用）
   if (layout === 'list') {
     return (
@@ -138,7 +143,7 @@ export default function ArticleCard({
             {post.title}
           </h3>
           <div className="line-clamp-2 text-sm text-gray-600 mb-3">
-            {post.excerpt}
+            {getPlainTextExcerpt(post.excerpt)}
           </div>
           <time className="text-xs text-gray-500">{formattedDate}</time>
         </div>

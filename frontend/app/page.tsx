@@ -39,8 +39,10 @@ export default async function Home() {
   // トップ記事（1件）
   const topPost = posts[0];
 
-  // 特集記事（2-4件目）
-  const featuredPosts = posts.slice(1, 4);
+  // 特集記事（「特集」タグが付いた記事）
+  const featuredPosts = posts.filter(post =>
+    post.tags?.nodes.some(tag => tag.slug === 'featured' || tag.slug === 'tokushu')
+  );
 
   // メイン記事（5-16件目）
   const mainPosts = posts.slice(4, 16);
@@ -63,11 +65,11 @@ export default async function Home() {
               </section>
             )}
 
-            {/* 特集記事 */}
-            {featuredPosts.length > 0 && (
+            {/* 注目の記事（トップ記事の次、2-4件目） */}
+            {posts.slice(1, 4).length > 0 && (
               <section className="mb-6">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  {featuredPosts.map((post) => (
+                  {posts.slice(1, 4).map((post) => (
                     <ArticleCard key={post.id} post={post} layout="small" />
                   ))}
                 </div>
@@ -92,18 +94,19 @@ export default async function Home() {
               </section>
             )}
 
-            {/* 特集セクション */}
-            <section className="mb-6">
-              <div className="mb-4 border-b-2 border-red-600 pb-2">
-                <h2 className="text-lg font-bold text-gray-900">特集</h2>
-              </div>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {/* 特集記事をここに配置可能 */}
-                {featuredPosts.slice(0, 6).map((post) => (
-                  <ArticleCard key={post.id} post={post} layout="medium" />
-                ))}
-              </div>
-            </section>
+            {/* 特集セクション（「特集」タグが付いた記事） */}
+            {featuredPosts.length > 0 && (
+              <section className="mb-6">
+                <div className="mb-4 border-b-2 border-red-600 pb-2">
+                  <h2 className="text-lg font-bold text-gray-900">特集</h2>
+                </div>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {featuredPosts.slice(0, 6).map((post) => (
+                    <ArticleCard key={post.id} post={post} layout="medium" />
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* 他の記事セクション */}
             <section className="mb-6">
