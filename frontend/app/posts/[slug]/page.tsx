@@ -110,7 +110,7 @@ export default async function PostPage({ params }: { params: PageParams }) {
 
             {/* 記事本文 */}
             <div
-              className="prose prose-lg max-w-none prose-headings:font-bold prose-h2:text-xl prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-2 prose-h2:mb-4 prose-p:mb-4 prose-p:leading-relaxed prose-a:text-red-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded"
+              className="prose prose-lg max-w-none wp-content"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 

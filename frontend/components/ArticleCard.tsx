@@ -27,10 +27,14 @@ export default function ArticleCard({
     day: 'numeric',
   });
 
-  // HTMLタグを除去して抜粋を取得
-  const getPlainTextExcerpt = (excerpt: string) => {
-    return excerpt.replace(/<[^>]*>/g, '').trim();
+  // HTMLタグを除去して抜粋を取得（最大100文字）
+  const getPlainTextExcerpt = (excerpt: string, maxLength: number = 100) => {
+    const plainText = excerpt.replace(/<[^>]*>/g, '').trim();
+    return plainText.length > maxLength ? plainText.substring(0, maxLength) + '...' : plainText;
   };
+
+  // 著者名を取得（無い場合はデフォルト）
+  const authorName = post.author?.node?.name || 'コアランゲージハブ編集部';
 
   // リストレイアウト（サイドバー用）
   if (layout === 'list') {
@@ -75,9 +79,13 @@ export default function ArticleCard({
                 {mainCategory.name}
               </span>
             )}
-            <h3 className="line-clamp-3 text-sm font-bold leading-snug text-gray-900 group-hover:text-red-600 transition-colors">
+            <h3 className="line-clamp-2 text-sm font-bold leading-snug text-gray-900 group-hover:text-red-600 transition-colors mb-1">
               {post.title}
             </h3>
+            <p className="text-xs text-gray-600 line-clamp-2 mb-1">
+              {getPlainTextExcerpt(post.excerpt)}
+            </p>
+            <p className="text-xs text-gray-400">{authorName}</p>
           </div>
         </article>
       </Link>
@@ -107,10 +115,16 @@ export default function ArticleCard({
                 {mainCategory.name}
               </span>
             )}
-            <h3 className="line-clamp-3 text-base font-bold leading-snug text-gray-900 group-hover:text-red-600 transition-colors mb-2">
+            <h3 className="line-clamp-2 text-base font-bold leading-snug text-gray-900 group-hover:text-red-600 transition-colors mb-2">
               {post.title}
             </h3>
-            <time className="text-xs text-gray-500">{formattedDate}</time>
+            <p className="text-sm text-gray-600 line-clamp-2 mb-2">
+              {getPlainTextExcerpt(post.excerpt)}
+            </p>
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-gray-400">{authorName}</span>
+              <time className="text-gray-500">{formattedDate}</time>
+            </div>
           </div>
         </article>
       </Link>
@@ -139,13 +153,16 @@ export default function ArticleCard({
               {mainCategory.name}
             </span>
           )}
-          <h3 className="line-clamp-3 text-xl font-bold leading-tight text-gray-900 group-hover:text-red-600 transition-colors mb-3">
+          <h3 className="line-clamp-2 text-xl font-bold leading-tight text-gray-900 group-hover:text-red-600 transition-colors mb-3">
             {post.title}
           </h3>
           <div className="line-clamp-2 text-sm text-gray-600 mb-3">
             {getPlainTextExcerpt(post.excerpt)}
           </div>
-          <time className="text-xs text-gray-500">{formattedDate}</time>
+          <div className="flex items-center justify-between text-xs">
+            <span className="text-gray-400">{authorName}</span>
+            <time className="text-gray-500">{formattedDate}</time>
+          </div>
         </div>
       </article>
     </Link>

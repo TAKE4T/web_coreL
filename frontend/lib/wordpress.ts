@@ -118,6 +118,7 @@ export async function getPosts(params: {
             categoryIn: $categoryIn
             search: $search
             status: PUBLISH
+            orderby: { field: DATE, order: DESC }
           }
         ) {
           pageInfo {

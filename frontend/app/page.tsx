@@ -94,7 +94,19 @@ export default async function Home() {
               </section>
             )}
 
-            {/* 特集セクション（「特集」タグが付いた記事） */}
+            {/* 他の記事セクション */}
+            <section className="mb-6">
+              <div className="mb-4 border-b-2 border-red-600 pb-2">
+                <h2 className="text-lg font-bold text-gray-900">他の記事</h2>
+              </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {posts.slice(21, 27).map((post) => (
+                  <ArticleCard key={post.id} post={post} layout="medium" />
+                ))}
+              </div>
+            </section>
+
+            {/* 特集セクション（「特集」タグが付いた記事） - 最下部に配置 */}
             {featuredPosts.length > 0 && (
               <section className="mb-6">
                 <div className="mb-4 border-b-2 border-red-600 pb-2">
@@ -107,18 +119,6 @@ export default async function Home() {
                 </div>
               </section>
             )}
-
-            {/* 他の記事セクション */}
-            <section className="mb-6">
-              <div className="mb-4 border-b-2 border-red-600 pb-2">
-                <h2 className="text-lg font-bold text-gray-900">他の記事</h2>
-              </div>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {posts.slice(21, 27).map((post) => (
-                  <ArticleCard key={post.id} post={post} layout="medium" />
-                ))}
-              </div>
-            </section>
           </div>
 
           {/* サイドバー */}
