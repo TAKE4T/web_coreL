@@ -68,3 +68,12 @@ model VerificationToken {
   @@id([identifier, token])
   @@map("verification_tokens")
 }
+
+model Newsletter {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("newsletters")
+}
