@@ -80,9 +80,6 @@ export default function Header() {
           <Link href="/category/business-model" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
             ビジネスモデル
           </Link>
-          <Link href="/category/website-creation" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            Webサイト制作
-          </Link>
           <Link href="/category/case-study" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
             事例
           </Link>
