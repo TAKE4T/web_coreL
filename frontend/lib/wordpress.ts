@@ -64,6 +64,15 @@ export interface Category {
   slug: string;
 }
 
+export interface Tag {
+  id: string;
+  databaseId: number;
+  count: number;
+  description: string;
+  name: string;
+  slug: string;
+}
+
 export interface Page {
   id: string;
   databaseId: number;
@@ -366,6 +375,35 @@ export async function getPopularPosts(limit: number = 5): Promise<Post[]> {
     return posts;
   } catch (error) {
     console.error('Error fetching popular posts:', error);
+    return [];
+  }
+}
+
+/**
+ * タグ一覧を取得
+ */
+export async function getTags(): Promise<Tag[]> {
+  try {
+    const query = gql`
+      query GetTags {
+        tags(first: 100, where: { hideEmpty: true }) {
+          nodes {
+            id
+            databaseId
+            count
+            description
+            name
+            slug
+          }
+        }
+      }
+    `;
+
+    const data: any = await client.request(query);
+    return data.tags.nodes || [];
+  } catch (error) {
+    console.error('Error fetching tags:', error);
+    console.error('GraphQL URL:', GRAPHQL_URL);
     return [];
   }
 }
