@@ -13,6 +13,7 @@ export default function NewsletterPage() {
     setSubmitMessage('');
 
     try {
+      console.log('メルマガ登録リクエスト送信:', email);
       const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: {
@@ -21,14 +22,21 @@ export default function NewsletterPage() {
         body: JSON.stringify({ email }),
       });
 
+      console.log('レスポンスステータス:', response.status);
+      const data = await response.json();
+      console.log('レスポンスデータ:', data);
+
       if (response.ok) {
         setSubmitMessage('メルマガ登録ありがとうございます！');
         setEmail('');
       } else {
-        setSubmitMessage('登録に失敗しました。再度お試しください。');
+        const errorMessage = data.error || '登録に失敗しました。再度お試しください。';
+        setSubmitMessage(errorMessage);
+        console.error('エラー詳細:', data);
       }
     } catch (error) {
-      setSubmitMessage('エラーが発生しました。再度お試しください。');
+      console.error('キャッチしたエラー:', error);
+      setSubmitMessage('エラーが発生しました。再度お試しください。: ' + (error instanceof Error ? error.message : String(error)));
     } finally {
       setIsSubmitting(false);
     }
