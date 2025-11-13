@@ -117,9 +117,6 @@ ${message}
         </body>
         </html>
       `,
-      // 文字エンコーディング設定
-      encoding: 'utf-8',
-      textEncoding: 'quoted-printable',
     };
 
     console.log('メール送信中...');
