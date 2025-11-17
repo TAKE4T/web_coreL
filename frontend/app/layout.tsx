@@ -18,23 +18,29 @@ export const metadata: Metadata = {
   description: "ビジネス成長のための実践的なマーケティング、デザイン、フレームワークの知識を提供するWebメディア",
 };
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "G-N86E2LCTFL";`n`nexport default function RootLayout({
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "G-N86E2LCTFL";
+
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="ja">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Script src="https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}" strategy="afterInteractive" />
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
         <Script id="gtag-init" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];\n          function gtag(){dataLayer.push(arguments);}\n          gtag('js', new Date());\n          gtag('config', '');`}
+{`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);} 
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`}
         </Script>
+
         {children}
       </body>
     </html>
   );
 }
-
