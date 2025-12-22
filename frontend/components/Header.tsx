@@ -75,7 +75,7 @@ export default function Header() {
             ビジネスモデル
           </Link>
           <Link href="/category/design-copy" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            デザインコピー
+            プログラム言語
           </Link>
           <Link href="/category/learning" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
             学び
