@@ -4,7 +4,7 @@
 
 ## 技術スタック
 
-- **フロントエンド**: Next.js 15 (App Router)
+- **フロントエンド**: Next.js 16 (App Router)
 - **スタイリング**: Tailwind CSS
 - **バックエンド**: WordPress (Headless CMS)
 - **デプロイ**: Vercel
