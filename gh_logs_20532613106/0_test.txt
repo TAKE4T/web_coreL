@@ -1,0 +1,480 @@
+﻿2025-12-27T01:41:02.3890272Z Current runner version: '2.330.0'
+2025-12-27T01:41:02.3925205Z ##[group]Runner Image Provisioner
+2025-12-27T01:41:02.3926626Z Hosted Compute Agent
+2025-12-27T01:41:02.3927733Z Version: 20251211.462
+2025-12-27T01:41:02.3928738Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+2025-12-27T01:41:02.3929794Z Build Date: 2025-12-11T16:28:49Z
+2025-12-27T01:41:02.3931021Z Worker ID: {9f1e0eec-f4f1-447a-8399-2e1bcdbc6a7f}
+2025-12-27T01:41:02.3932199Z ##[endgroup]
+2025-12-27T01:41:02.3933292Z ##[group]Operating System
+2025-12-27T01:41:02.3934251Z Ubuntu
+2025-12-27T01:41:02.3935041Z 24.04.3
+2025-12-27T01:41:02.3935994Z LTS
+2025-12-27T01:41:02.3936959Z ##[endgroup]
+2025-12-27T01:41:02.3937788Z ##[group]Runner Image
+2025-12-27T01:41:02.3938725Z Image: ubuntu-24.04
+2025-12-27T01:41:02.3939661Z Version: 20251215.174.1
+2025-12-27T01:41:02.3941390Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251215.174/images/ubuntu/Ubuntu2404-Readme.md
+2025-12-27T01:41:02.3944154Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251215.174
+2025-12-27T01:41:02.3946073Z ##[endgroup]
+2025-12-27T01:41:02.3948076Z ##[group]GITHUB_TOKEN Permissions
+2025-12-27T01:41:02.3950560Z Contents: read
+2025-12-27T01:41:02.3951591Z Metadata: read
+2025-12-27T01:41:02.3952501Z Packages: read
+2025-12-27T01:41:02.3953284Z ##[endgroup]
+2025-12-27T01:41:02.3957015Z Secret source: Actions
+2025-12-27T01:41:02.3958570Z Prepare workflow directory
+2025-12-27T01:41:02.4538827Z Prepare all required actions
+2025-12-27T01:41:02.4596115Z Getting action download info
+2025-12-27T01:41:02.6656711Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2025-12-27T01:41:02.7793013Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2025-12-27T01:41:02.9652310Z Complete job name: test
+2025-12-27T01:41:03.0324106Z ##[group]Run actions/checkout@v4
+2025-12-27T01:41:03.0324911Z with:
+2025-12-27T01:41:03.0325303Z   repository: TAKE4T/web_coreL
+2025-12-27T01:41:03.0326107Z   token: ***
+2025-12-27T01:41:03.0326482Z   ssh-strict: true
+2025-12-27T01:41:03.0326876Z   ssh-user: git
+2025-12-27T01:41:03.0327278Z   persist-credentials: true
+2025-12-27T01:41:03.0327718Z   clean: true
+2025-12-27T01:41:03.0328103Z   sparse-checkout-cone-mode: true
+2025-12-27T01:41:03.0328575Z   fetch-depth: 1
+2025-12-27T01:41:03.0328948Z   fetch-tags: false
+2025-12-27T01:41:03.0329341Z   show-progress: true
+2025-12-27T01:41:03.0329732Z   lfs: false
+2025-12-27T01:41:03.0330089Z   submodules: false
+2025-12-27T01:41:03.0330487Z   set-safe-directory: true
+2025-12-27T01:41:03.0331151Z ##[endgroup]
+2025-12-27T01:41:03.1428355Z Syncing repository: TAKE4T/web_coreL
+2025-12-27T01:41:03.1430003Z ##[group]Getting Git version info
+2025-12-27T01:41:03.1430681Z Working directory is '/home/runner/work/web_coreL/web_coreL'
+2025-12-27T01:41:03.1431704Z [command]/usr/bin/git version
+2025-12-27T01:41:03.1549417Z git version 2.52.0
+2025-12-27T01:41:03.1576253Z ##[endgroup]
+2025-12-27T01:41:03.1592371Z Temporarily overriding HOME='/home/runner/work/_temp/e01326d0-e1ba-4e3e-94cb-9ddbd043234d' before making global git config changes
+2025-12-27T01:41:03.1593733Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-27T01:41:03.1605230Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/web_coreL/web_coreL
+2025-12-27T01:41:03.1646914Z Deleting the contents of '/home/runner/work/web_coreL/web_coreL'
+2025-12-27T01:41:03.1650488Z ##[group]Initializing the repository
+2025-12-27T01:41:03.1654157Z [command]/usr/bin/git init /home/runner/work/web_coreL/web_coreL
+2025-12-27T01:41:03.1794272Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-27T01:41:03.1795883Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-27T01:41:03.1796958Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-27T01:41:03.1797691Z hint: call:
+2025-12-27T01:41:03.1798686Z hint:
+2025-12-27T01:41:03.1799611Z hint: 	git config --global init.defaultBranch <name>
+2025-12-27T01:41:03.1800376Z hint:
+2025-12-27T01:41:03.1801408Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-27T01:41:03.1803302Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-27T01:41:03.1804699Z hint:
+2025-12-27T01:41:03.1805438Z hint: 	git branch -m <name>
+2025-12-27T01:41:03.1806567Z hint:
+2025-12-27T01:41:03.1807709Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-27T01:41:03.1809572Z Initialized empty Git repository in /home/runner/work/web_coreL/web_coreL/.git/
+2025-12-27T01:41:03.1814406Z [command]/usr/bin/git remote add origin https://github.com/TAKE4T/web_coreL
+2025-12-27T01:41:03.1850668Z ##[endgroup]
+2025-12-27T01:41:03.1851871Z ##[group]Disabling automatic garbage collection
+2025-12-27T01:41:03.1855766Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-27T01:41:03.1883665Z ##[endgroup]
+2025-12-27T01:41:03.1884860Z ##[group]Setting up auth
+2025-12-27T01:41:03.1891402Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-27T01:41:03.1922251Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-27T01:41:03.2336145Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-27T01:41:03.2365905Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-27T01:41:03.2580980Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-27T01:41:03.2611136Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-27T01:41:03.2839022Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-27T01:41:03.2871882Z ##[endgroup]
+2025-12-27T01:41:03.2873105Z ##[group]Fetching the repository
+2025-12-27T01:41:03.2881959Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a819aba302e78a9d3e6a27aeca458fa226fb6adf:refs/remotes/origin/main
+2025-12-27T01:41:03.4664755Z From https://github.com/TAKE4T/web_coreL
+2025-12-27T01:41:03.4665822Z  * [new ref]         a819aba302e78a9d3e6a27aeca458fa226fb6adf -> origin/main
+2025-12-27T01:41:03.4700630Z ##[endgroup]
+2025-12-27T01:41:03.4703304Z ##[group]Determining the checkout info
+2025-12-27T01:41:03.4704251Z ##[endgroup]
+2025-12-27T01:41:03.4708784Z [command]/usr/bin/git sparse-checkout disable
+2025-12-27T01:41:03.4755395Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-27T01:41:03.4781210Z ##[group]Checking out the ref
+2025-12-27T01:41:03.4785742Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-12-27T01:41:03.4878633Z Switched to a new branch 'main'
+2025-12-27T01:41:03.4881291Z branch 'main' set up to track 'origin/main'.
+2025-12-27T01:41:03.4887816Z ##[endgroup]
+2025-12-27T01:41:03.4921625Z [command]/usr/bin/git log -1 --format=%H
+2025-12-27T01:41:03.4942891Z a819aba302e78a9d3e6a27aeca458fa226fb6adf
+2025-12-27T01:41:03.5179857Z ##[group]Run actions/setup-node@v4
+2025-12-27T01:41:03.5180391Z with:
+2025-12-27T01:41:03.5180737Z   node-version: 20
+2025-12-27T01:41:03.5181109Z   always-auth: false
+2025-12-27T01:41:03.5181504Z   check-latest: false
+2025-12-27T01:41:03.5182039Z   token: ***
+2025-12-27T01:41:03.5182400Z ##[endgroup]
+2025-12-27T01:41:03.6926035Z Found in cache @ /opt/hostedtoolcache/node/20.19.6/x64
+2025-12-27T01:41:03.6932938Z ##[group]Environment details
+2025-12-27T01:41:04.0629820Z node: v20.19.6
+2025-12-27T01:41:04.0631119Z npm: 10.8.2
+2025-12-27T01:41:04.0632035Z yarn: 1.22.22
+2025-12-27T01:41:04.0634217Z ##[endgroup]
+2025-12-27T01:41:04.0776808Z ##[group]Run npm install
+2025-12-27T01:41:04.0777864Z [36;1mnpm install[0m
+2025-12-27T01:41:04.0825035Z shell: /usr/bin/bash -e {0}
+2025-12-27T01:41:04.0826125Z env:
+2025-12-27T01:41:04.0826960Z   DATABASE_URL: file:./dev.db
+2025-12-27T01:41:04.0827848Z ##[endgroup]
+2025-12-27T01:41:30.4465202Z npm warn ERESOLVE overriding peer dependency
+2025-12-27T01:41:30.4466564Z npm warn While resolving: @auth/core@0.41.0
+2025-12-27T01:41:30.4467269Z npm warn Found: nodemailer@7.0.12
+2025-12-27T01:41:30.4467757Z npm warn node_modules/nodemailer
+2025-12-27T01:41:30.4468228Z npm warn   nodemailer@"^7.0.10" from the root project
+2025-12-27T01:41:30.4468693Z npm warn   2 more (next-auth, @auth/core)
+2025-12-27T01:41:30.4469043Z npm warn
+2025-12-27T01:41:30.4469380Z npm warn Could not resolve dependency:
+2025-12-27T01:41:30.4469883Z npm warn peerOptional nodemailer@"^6.8.0" from @auth/core@0.41.0
+2025-12-27T01:41:30.4470449Z npm warn node_modules/next-auth/node_modules/@auth/core
+2025-12-27T01:41:30.4471049Z npm warn   @auth/core@"0.41.0" from next-auth@5.0.0-beta.30
+2025-12-27T01:41:30.4471489Z npm warn   node_modules/next-auth
+2025-12-27T01:41:30.4471798Z npm warn
+2025-12-27T01:41:30.4472163Z npm warn Conflicting peer dependency: nodemailer@6.10.1
+2025-12-27T01:41:30.4472598Z npm warn node_modules/nodemailer
+2025-12-27T01:41:30.4473100Z npm warn   peerOptional nodemailer@"^6.8.0" from @auth/core@0.41.0
+2025-12-27T01:41:30.4473630Z npm warn   node_modules/next-auth/node_modules/@auth/core
+2025-12-27T01:41:30.4474150Z npm warn     @auth/core@"0.41.0" from next-auth@5.0.0-beta.30
+2025-12-27T01:41:30.4474593Z npm warn     node_modules/next-auth
+2025-12-27T01:41:45.2456346Z 
+2025-12-27T01:41:45.2457035Z > frontend@0.1.0 postinstall
+2025-12-27T01:41:45.2457558Z > prisma generate
+2025-12-27T01:41:45.2457778Z 
+2025-12-27T01:41:45.9320761Z Loaded Prisma config from prisma.config.ts.
+2025-12-27T01:41:45.9321320Z 
+2025-12-27T01:41:46.0710820Z Prisma config detected, skipping environment variable loading.
+2025-12-27T01:41:46.0716361Z Prisma schema loaded from prisma/schema.prisma
+2025-12-27T01:41:46.2864575Z ┌─────────────────────────────────────────────────────────┐
+2025-12-27T01:41:46.2866867Z │  Update available 6.19.1 -> 7.2.0                       │
+2025-12-27T01:41:46.2867636Z │                                                         │
+2025-12-27T01:41:46.2868445Z │  This is a major update - please follow the guide at    │
+2025-12-27T01:41:46.2871898Z │  https://pris.ly/d/major-version-upgrade                │
+2025-12-27T01:41:46.2872469Z │                                                         │
+2025-12-27T01:41:46.2872942Z │  Run the following to update                            │
+2025-12-27T01:41:46.2873446Z │    npm i --save-dev prisma@latest                       │
+2025-12-27T01:41:46.2873883Z │    npm i @prisma/client@latest                          │
+2025-12-27T01:41:46.2874344Z └─────────────────────────────────────────────────────────┘
+2025-12-27T01:41:46.2874604Z 
+2025-12-27T01:41:46.2875957Z ✔ Generated Prisma Client (v6.19.1) to ./node_modules/@prisma/client in 91ms
+2025-12-27T01:41:46.2876270Z 
+2025-12-27T01:41:46.2876612Z Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+2025-12-27T01:41:46.2876927Z 
+2025-12-27T01:41:46.2877368Z Tip: Interested in query caching in just a few lines of code? Try Accelerate today! https://pris.ly/tip-3-accelerate
+2025-12-27T01:41:46.2877765Z 
+2025-12-27T01:41:46.3152727Z 
+2025-12-27T01:41:46.3153231Z added 582 packages, and audited 583 packages in 42s
+2025-12-27T01:41:46.3153686Z 
+2025-12-27T01:41:46.3153947Z 172 packages are looking for funding
+2025-12-27T01:41:46.3178083Z   run `npm fund` for details
+2025-12-27T01:41:46.3178379Z 
+2025-12-27T01:41:46.3178559Z found 0 vulnerabilities
+2025-12-27T01:41:46.3621758Z ##[group]Run npm run test
+2025-12-27T01:41:46.3622046Z [36;1mnpm run test[0m
+2025-12-27T01:41:46.3657786Z shell: /usr/bin/bash -e {0}
+2025-12-27T01:41:46.3658024Z ##[endgroup]
+2025-12-27T01:41:46.4734750Z 
+2025-12-27T01:41:46.4735044Z > frontend@0.1.0 test
+2025-12-27T01:41:46.4735313Z > vitest run
+2025-12-27T01:41:46.4735456Z 
+2025-12-27T01:41:46.7434793Z 
+2025-12-27T01:41:46.7533615Z [1m[46m RUN [49m[22m [36mv4.0.16 [39m[90m/home/runner/work/web_coreL/web_coreL/frontend[39m
+2025-12-27T01:41:46.7534420Z 
+2025-12-27T01:41:47.0958924Z [90mstderr[2m | app/api/test-db/route_test.ts
+2025-12-27T01:41:47.0960676Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.0961560Z 
+2025-12-27T01:41:47.0962042Z [90mstderr[2m | app/api/newsletter/route_test.ts
+2025-12-27T01:41:47.0963710Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.0964565Z 
+2025-12-27T01:41:47.1074486Z [90mstdout[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:41:47.1076133Z [22m[39m=== お問い合わせAPI開始 ===
+2025-12-27T01:41:47.1076436Z 
+2025-12-27T01:41:47.1169690Z [90mstderr[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:41:47.1171142Z [22m[39mエラー: メール設定が未設定
+2025-12-27T01:41:47.1171885Z EMAIL_USER: 未設定
+2025-12-27T01:41:47.1172637Z EMAIL_PASS: 未設定
+2025-12-27T01:41:47.1174311Z 
+2025-12-27T01:41:47.1200246Z [90mstdout[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:41:47.1202583Z [22m[39m受信したデータ: { name: [32m'Taro'[39m, email: [32m'taro@example.com'[39m, messageLength: [33m2[39m }
+2025-12-27T01:41:47.1203195Z 
+2025-12-27T01:41:47.1204330Z [90mstdout[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mreturns 400 if required fields missing
+2025-12-27T01:41:47.1205375Z [22m[39m=== お問い合わせAPI開始 ===
+2025-12-27T01:41:47.1205828Z 
+2025-12-27T01:41:47.1206920Z [90mstdout[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mreturns 400 if required fields missing
+2025-12-27T01:41:47.1208401Z [22m[39m受信したデータ: { name: [32m''[39m, email: [32m''[39m, messageLength: [33m0[39m }
+2025-12-27T01:41:47.1209056Z エラー: 必須フィールドが空
+2025-12-27T01:41:47.1209238Z 
+2025-12-27T01:41:47.1216423Z  [31m❯[39m app/api/contact/route_test.ts [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 13[2mms[22m[39m
+2025-12-27T01:41:47.1217809Z [31m     [31m×[31m succeeds with valid payload[39m[32m 10[2mms[22m[39m
+2025-12-27T01:41:47.1222220Z      [32m✓[39m returns 400 if required fields missing[32m 1[2mms[22m[39m
+2025-12-27T01:41:47.2817548Z [90mstderr[2m | lib/prisma_test.ts
+2025-12-27T01:41:47.2818498Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.2818981Z 
+2025-12-27T01:41:47.3296316Z [90mstderr[2m | lib/wordpress_test.ts
+2025-12-27T01:41:47.3298608Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.3299995Z 
+2025-12-27T01:41:47.4982700Z [90mstderr[2m | app/api/newsletter/route.test.ts
+2025-12-27T01:41:47.4984366Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.4985225Z 
+2025-12-27T01:41:47.5505142Z [90mstderr[2m | lib/wordpress.test.ts
+2025-12-27T01:41:47.5507360Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.5509685Z 
+2025-12-27T01:41:47.6530507Z [90mstderr[2m | lib/prisma.test.ts
+2025-12-27T01:41:47.6532720Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.6546149Z 
+2025-12-27T01:41:47.6934761Z [90mstdout[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:41:47.6954362Z [22m[39m=== お問い合わせAPI開始 ===
+2025-12-27T01:41:47.6954922Z 
+2025-12-27T01:41:47.6957789Z [90mstderr[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:41:47.6959152Z [22m[39mエラー: メール設定が未設定
+2025-12-27T01:41:47.6959976Z EMAIL_USER: 未設定
+2025-12-27T01:41:47.6961187Z [90mstdout[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:41:47.6962180Z EMAIL_PASS: 未設定
+2025-12-27T01:41:47.6962384Z 
+2025-12-27T01:41:47.6964559Z [22m[39m受信したデータ: { name: [32m'Taro'[39m, email: [32m'taro@example.com'[39m, messageLength: [33m2[39m }
+2025-12-27T01:41:47.6965171Z 
+2025-12-27T01:41:47.7049201Z [90mstdout[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mreturns 400 if required fields missing
+2025-12-27T01:41:47.7050365Z [22m[39m=== お問い合わせAPI開始 ===
+2025-12-27T01:41:47.7050661Z 
+2025-12-27T01:41:47.7052050Z [90mstdout[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mreturns 400 if required fields missing
+2025-12-27T01:41:47.7055444Z [22m[39m受信したデータ: { name: [32m''[39m, email: [32m''[39m, messageLength: [33m0[39m }
+2025-12-27T01:41:47.7056720Z エラー: 必須フィールドが空
+2025-12-27T01:41:47.7057517Z 
+2025-12-27T01:41:47.7058969Z  [31m❯[39m app/api/contact/route.test.ts [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 15[2mms[22m[39m
+2025-12-27T01:41:47.7060661Z [31m     [31m×[31m succeeds with valid payload[39m[32m 12[2mms[22m[39m
+2025-12-27T01:41:47.7061936Z      [32m✓[39m returns 400 if required fields missing[32m 1[2mms[22m[39m
+2025-12-27T01:41:47.7490026Z [90mstderr[2m | app/api/test-db/route.test.ts
+2025-12-27T01:41:47.7492782Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.7493684Z 
+2025-12-27T01:41:47.8554571Z 
+2025-12-27T01:41:47.8556593Z [31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Suites 10 [49m[22m[31m⎯⎯⎯⎯⎯⎯[39m
+2025-12-27T01:41:47.8558979Z 
+2025-12-27T01:41:47.8561829Z [41m[1m FAIL [22m[49m lib/prisma.test.ts[2m [ lib/prisma.test.ts ][22m
+2025-12-27T01:41:47.8562945Z [41m[1m FAIL [22m[49m lib/prisma_test.ts[2m [ lib/prisma_test.ts ][22m
+2025-12-27T01:41:47.8566756Z [31m[1mTypeError[22m: () => ({
+2025-12-27T01:41:47.8567496Z     $disconnect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0)
+2025-12-27T01:41:47.8568475Z   }) is not a constructor[39m
+2025-12-27T01:41:47.8573425Z [36m [2m❯[22m lib/prisma.ts:[2m7:49[22m[39m
+2025-12-27T01:41:47.8594327Z     [90m  5| [39m}[33m;[39m
+2025-12-27T01:41:47.8594802Z     [90m  6| [39m
+2025-12-27T01:41:47.8597993Z     [90m  7| [39m[35mexport[39m [35mconst[39m prisma [33m=[39m globalForPrisma[33m.[39mprisma [33m??[39m [35mnew[39m [33mPrismaClient[39m()[33m;[39m
+2025-12-27T01:41:47.8599562Z     [90m   | [39m                                                [31m^[39m
+2025-12-27T01:41:47.8600231Z     [90m  8| [39m
+2025-12-27T01:41:47.8601129Z     [90m  9| [39mif (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = pr…
+2025-12-27T01:41:47.8602298Z [90m [2m❯[22m lib/prisma_test.ts:[2m10:1[22m[39m
+2025-12-27T01:41:47.8602792Z 
+2025-12-27T01:41:47.8603742Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯[22m[39m
+2025-12-27T01:41:47.8604114Z 
+2025-12-27T01:41:47.8604844Z [41m[1m FAIL [22m[49m lib/wordpress.test.ts[2m [ lib/wordpress.test.ts ][22m
+2025-12-27T01:41:47.8606496Z [41m[1m FAIL [22m[49m lib/wordpress_test.ts[2m [ lib/wordpress_test.ts ][22m
+2025-12-27T01:41:47.8607375Z [31m[1mTypeError[22m: () => ({
+2025-12-27T01:41:47.8608710Z     request: __vite_ssr_import_0__.vi.fn().mockResolvedValue({ categories: { nodes: [{ id: "1", databa...<omitted>...}) is not a constructor[39m
+2025-12-27T01:41:47.8610289Z [36m [2m❯[22m lib/wordpress.ts:[2m6:16[22m[39m
+2025-12-27T01:41:47.8635694Z     [90m  4| [39m
+2025-12-27T01:41:47.8637577Z     [90m  5| [39m[90m// GraphQLクライアントの作成[39m
+2025-12-27T01:41:47.8638770Z     [90m  6| [39m[35mconst[39m client [33m=[39m [35mnew[39m [33mGraphQLClient[39m([33mGRAPHQL_URL[39m[33m,[39m {
+2025-12-27T01:41:47.8639748Z     [90m   | [39m               [31m^[39m
+2025-12-27T01:41:47.8640335Z     [90m  7| [39m  headers[33m:[39m {
+2025-12-27T01:41:47.8641235Z     [90m  8| [39m    'User-Agent': 'Mozilla/5.0 (compatible; NextJS/16.0; +https://core…
+2025-12-27T01:41:47.8642263Z [90m [2m❯[22m lib/wordpress_test.ts:[2m11:1[22m[39m
+2025-12-27T01:41:47.8642648Z 
+2025-12-27T01:41:47.8643066Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯[22m[39m
+2025-12-27T01:41:47.8643413Z 
+2025-12-27T01:41:47.8644239Z [41m[1m FAIL [22m[49m app/api/newsletter/route.test.ts[2m [ app/api/newsletter/route.test.ts ][22m
+2025-12-27T01:41:47.8646059Z [41m[1m FAIL [22m[49m app/api/newsletter/route_test.ts[2m [ app/api/newsletter/route_test.ts ][22m
+2025-12-27T01:41:47.8648568Z [31m[1mTypeError[22m: () => ({
+2025-12-27T01:41:47.8649007Z       newsletter,
+2025-12-27T01:41:47.8649608Z       $disconnect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0)
+2025-12-27T01:41:47.8650371Z     }) is not a constructor[39m
+2025-12-27T01:41:47.8651824Z [36m [2m❯[22m app/api/newsletter/route.ts:[2m4:16[22m[39m
+2025-12-27T01:41:47.8654233Z     [90m  2| [39m[35mimport[39m { [33mPrismaClient[39m } [35mfrom[39m [32m'@prisma/client'[39m[33m;[39m
+2025-12-27T01:41:47.8655013Z     [90m  3| [39m
+2025-12-27T01:41:47.8656362Z     [90m  4| [39m[35mconst[39m prisma [33m=[39m [35mnew[39m [33mPrismaClient[39m()[33m;[39m
+2025-12-27T01:41:47.8657182Z     [90m   | [39m               [31m^[39m
+2025-12-27T01:41:47.8657653Z     [90m  5| [39m
+2025-12-27T01:41:47.8658661Z     [90m  6| [39m[35mexport[39m [35masync[39m [35mfunction[39m [33mPOST[39m(request[33m:[39m [33mNextRequest[39m) {
+2025-12-27T01:41:47.8659859Z [90m [2m❯[22m app/api/newsletter/route_test.ts:[2m23:1[22m[39m
+2025-12-27T01:41:47.8660282Z 
+2025-12-27T01:41:47.8660683Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯[22m[39m
+2025-12-27T01:41:47.8661012Z 
+2025-12-27T01:41:47.8661735Z [41m[1m FAIL [22m[49m app/api/test-db/route.test.ts[2m [ app/api/test-db/route.test.ts ][22m
+2025-12-27T01:41:47.8663582Z [41m[1m FAIL [22m[49m app/api/test-db/route_test.ts[2m [ app/api/test-db/route_test.ts ][22m
+2025-12-27T01:41:47.8664643Z [31m[1mTypeError[22m: () => ({
+2025-12-27T01:41:47.8665253Z     $connect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0),
+2025-12-27T01:41:47.8666704Z     $disconnect: __vite_ssr_imp...<omitted>...}) is not a constructor[39m
+2025-12-27T01:41:47.8667663Z [36m [2m❯[22m app/api/test-db/route.ts:[2m4:16[22m[39m
+2025-12-27T01:41:47.8669132Z     [90m  2| [39m[35mimport[39m { [33mPrismaClient[39m } [35mfrom[39m [32m'@prisma/client'[39m[33m;[39m
+2025-12-27T01:41:47.8669904Z     [90m  3| [39m
+2025-12-27T01:41:47.8670653Z     [90m  4| [39m[35mconst[39m prisma [33m=[39m [35mnew[39m [33mPrismaClient[39m()[33m;[39m
+2025-12-27T01:41:47.8671438Z     [90m   | [39m               [31m^[39m
+2025-12-27T01:41:47.8672015Z     [90m  5| [39m
+2025-12-27T01:41:47.8672725Z     [90m  6| [39m[35mexport[39m [35masync[39m [35mfunction[39m [33mGET[39m() {
+2025-12-27T01:41:47.8673664Z [90m [2m❯[22m app/api/test-db/route_test.ts:[2m16:1[22m[39m
+2025-12-27T01:41:47.8674076Z 
+2025-12-27T01:41:47.8674458Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯[22m[39m
+2025-12-27T01:41:47.8674764Z 
+2025-12-27T01:41:47.8675878Z [41m[1m FAIL [22m[49m app/posts/[slug]/page.test.tsx[2m [ app/posts/[slug]/page.test.tsx ][22m
+2025-12-27T01:41:47.8677169Z [41m[1m FAIL [22m[49m app/posts/[slug]/page_test.tsx[2m [ app/posts/[slug]/page_test.tsx ][22m
+2025-12-27T01:41:47.8679145Z [31m[1mError[22m: Cannot find package '@/lib/wordpress' imported from '/home/runner/work/web_coreL/web_coreL/frontend/app/posts/[slug]/page.tsx'[39m
+2025-12-27T01:41:47.8680545Z [36m [2m❯[22m app/posts/[slug]/page.tsx:[2m3:1[22m[39m
+2025-12-27T01:41:47.8693800Z     [90m  1| [39m[35mimport[39m { notFound } [35mfrom[39m [32m'next/navigation'[39m[33m;[39m
+2025-12-27T01:41:47.8713536Z     [90m  2| [39m[35mimport[39m [33mImage[39m [35mfrom[39m [32m'next/image'[39m[33m;[39m
+2025-12-27T01:41:47.8714669Z     [90m  3| [39mimport { getPostBySlug, getPosts, getPopularPosts } from '@/lib/wordpr…
+2025-12-27T01:41:47.8715934Z     [90m   | [39m[31m^[39m
+2025-12-27T01:41:47.8716985Z     [90m  4| [39m[35mimport[39m [33mHeader[39m [35mfrom[39m [32m'@/components/Header'[39m[33m;[39m
+2025-12-27T01:41:47.8718177Z     [90m  5| [39m[35mimport[39m [33mFooter[39m [35mfrom[39m [32m'@/components/Footer'[39m[33m;[39m
+2025-12-27T01:41:47.8719382Z [90m [2m❯[22m app/posts/[slug]/page_test.tsx:[2m9:1[22m[39m
+2025-12-27T01:41:47.8719941Z 
+2025-12-27T01:41:47.8720350Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯[22m[39m
+2025-12-27T01:41:47.8720682Z 
+2025-12-27T01:41:47.8720692Z 
+2025-12-27T01:41:47.8721190Z [31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+2025-12-27T01:41:47.8721581Z 
+2025-12-27T01:41:47.8722511Z [41m[1m FAIL [22m[49m app/api/contact/route.test.ts[2m > [22mPOST /api/contact[2m > [22msucceeds with valid payload
+2025-12-27T01:41:47.8724102Z [41m[1m FAIL [22m[49m app/api/contact/route_test.ts[2m > [22mPOST /api/contact[2m > [22msucceeds with valid payload
+2025-12-27T01:41:47.8725441Z [31m[1mAssertionError[22m: expected undefined to be true // Object.is equality[39m
+2025-12-27T01:41:47.8726148Z 
+2025-12-27T01:41:47.8726412Z [32m- Expected:[39m 
+2025-12-27T01:41:47.8726796Z true
+2025-12-27T01:41:47.8726991Z 
+2025-12-27T01:41:47.8727237Z [31m+ Received:[39m 
+2025-12-27T01:41:47.8727623Z undefined
+2025-12-27T01:41:47.8727841Z 
+2025-12-27T01:41:47.8728420Z [36m [2m❯[22m app/api/contact/route_test.ts:[2m22:33[22m[39m
+2025-12-27T01:41:47.8729531Z     [90m 20| [39m    const req = { json: async () => ({ name: 'Taro', email: 'taro@exam…
+2025-12-27T01:41:47.8730610Z     [90m 21| [39m    [35mconst[39m res [33m=[39m [35mawait[39m route[33m.[39m[33mPOST[39m(req)[33m;[39m
+2025-12-27T01:41:47.8731933Z     [90m 22| [39m    [34mexpect[39m(res[33m.[39mpayload[33m.[39msuccess)[33m.[39m[34mtoBe[39m([35mtrue[39m)[33m;[39m
+2025-12-27T01:41:47.8733002Z     [90m   | [39m                                [31m^[39m
+2025-12-27T01:41:47.8734131Z     [90m 23| [39m    [34mexpect[39m(res[33m.[39mpayload)[33m.[39m[34mtoHaveProperty[39m([32m'messageId'[39m)[33m;[39m
+2025-12-27T01:41:47.8735041Z     [90m 24| [39m  })[33m;[39m
+2025-12-27T01:41:47.8735322Z 
+2025-12-27T01:41:47.8735894Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/12]⎯[22m[39m
+2025-12-27T01:41:47.8736219Z 
+2025-12-27T01:41:47.8736278Z 
+2025-12-27T01:41:47.8736783Z [2m Test Files [22m [1m[31m12 failed[39m[22m[90m (12)[39m
+2025-12-27T01:41:47.8737851Z [2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (4)[39m
+2025-12-27T01:41:47.8738648Z [2m   Start at [22m 01:41:46
+2025-12-27T01:41:47.8739727Z [2m   Duration [22m 1.10s[2m (transform 385ms, setup 0ms, import 148ms, tests 28ms, environment 2ms)[22m
+2025-12-27T01:41:47.8740331Z 
+2025-12-27T01:41:47.8751558Z 
+2025-12-27T01:41:47.8782285Z ##[error]TypeError: () => ({
+    $disconnect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0)
+  }) is not a constructor
+ ❯ lib/prisma.ts:7:49
+ ❯ lib/prisma_test.ts:10:1
+
+
+2025-12-27T01:41:47.8792771Z 
+2025-12-27T01:41:47.8795954Z ##[error]TypeError: () => ({
+    $disconnect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0)
+  }) is not a constructor
+ ❯ lib/prisma.ts:7:49
+ ❯ lib/prisma_test.ts:10:1
+
+
+2025-12-27T01:41:47.8797665Z 
+2025-12-27T01:41:47.8800574Z ##[error]TypeError: () => ({
+    request: __vite_ssr_import_0__.vi.fn().mockResolvedValue({ categories: { nodes: [{ id: "1", databa...<omitted>...}) is not a constructor
+ ❯ lib/wordpress.ts:6:16
+ ❯ lib/wordpress_test.ts:11:1
+
+
+2025-12-27T01:41:47.8802862Z 
+2025-12-27T01:41:47.8806075Z ##[error]TypeError: () => ({
+    request: __vite_ssr_import_0__.vi.fn().mockResolvedValue({ categories: { nodes: [{ id: "1", databa...<omitted>...}) is not a constructor
+ ❯ lib/wordpress.ts:6:16
+ ❯ lib/wordpress_test.ts:11:1
+
+
+2025-12-27T01:41:47.8808049Z 
+2025-12-27T01:41:47.8810598Z ##[error]AssertionError: expected undefined to be true // Object.is equality
+
+- Expected: 
+true
+
++ Received: 
+undefined
+
+ ❯ app/api/contact/route_test.ts:22:33
+
+
+2025-12-27T01:41:47.8812329Z 
+2025-12-27T01:41:47.8814818Z ##[error]AssertionError: expected undefined to be true // Object.is equality
+
+- Expected: 
+true
+
++ Received: 
+undefined
+
+ ❯ app/api/contact/route_test.ts:22:33
+
+
+2025-12-27T01:41:47.8816816Z 
+2025-12-27T01:41:47.8819713Z ##[error]TypeError: () => ({
+      newsletter,
+      $disconnect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0)
+    }) is not a constructor
+ ❯ app/api/newsletter/route.ts:4:16
+ ❯ app/api/newsletter/route_test.ts:23:1
+
+
+2025-12-27T01:41:47.8821707Z 
+2025-12-27T01:41:47.8824672Z ##[error]TypeError: () => ({
+      newsletter,
+      $disconnect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0)
+    }) is not a constructor
+ ❯ app/api/newsletter/route.ts:4:16
+ ❯ app/api/newsletter/route_test.ts:23:1
+
+
+2025-12-27T01:41:47.8826994Z 
+2025-12-27T01:41:47.8829975Z ##[error]TypeError: () => ({
+    $connect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0),
+    $disconnect: __vite_ssr_imp...<omitted>...}) is not a constructor
+ ❯ app/api/test-db/route.ts:4:16
+ ❯ app/api/test-db/route_test.ts:16:1
+
+
+2025-12-27T01:41:47.8832254Z 
+2025-12-27T01:41:47.8834955Z ##[error]TypeError: () => ({
+    $connect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0),
+    $disconnect: __vite_ssr_imp...<omitted>...}) is not a constructor
+ ❯ app/api/test-db/route.ts:4:16
+ ❯ app/api/test-db/route_test.ts:16:1
+
+
+2025-12-27T01:41:47.8837307Z 
+2025-12-27T01:41:47.8840830Z ##[error]Error: Cannot find package '@/lib/wordpress' imported from '/home/runner/work/web_coreL/web_coreL/frontend/app/posts/[slug]/page.tsx'
+ ❯ app/posts/[slug]/page.tsx:3:1
+ ❯ app/posts/[slug]/page_test.tsx:9:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_MODULE_NOT_FOUND' }
+
+2025-12-27T01:41:47.8843282Z 
+2025-12-27T01:41:47.8847352Z ##[error]Error: Cannot find package '@/lib/wordpress' imported from '/home/runner/work/web_coreL/web_coreL/frontend/app/posts/[slug]/page.tsx'
+ ❯ app/posts/[slug]/page.tsx:3:1
+ ❯ app/posts/[slug]/page_test.tsx:9:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_MODULE_NOT_FOUND' }
+
+2025-12-27T01:41:47.9079724Z ##[error]Process completed with exit code 1.
+2025-12-27T01:41:47.9172854Z Post job cleanup.
+2025-12-27T01:41:48.0107263Z [command]/usr/bin/git version
+2025-12-27T01:41:48.0142873Z git version 2.52.0
+2025-12-27T01:41:48.0187539Z Temporarily overriding HOME='/home/runner/work/_temp/b669487b-d43e-4cad-910f-597f6964cf17' before making global git config changes
+2025-12-27T01:41:48.0189016Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-27T01:41:48.0193927Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/web_coreL/web_coreL
+2025-12-27T01:41:48.0229449Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-27T01:41:48.0262568Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-27T01:41:48.0491173Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-27T01:41:48.0510600Z http.https://github.com/.extraheader
+2025-12-27T01:41:48.0522706Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-12-27T01:41:48.0552903Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-27T01:41:48.0775452Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-27T01:41:48.0806843Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-27T01:41:48.1133440Z Cleaning up orphan processes

@@ -1,0 +1,292 @@
+﻿2025-12-27T01:41:46.3621744Z ##[group]Run npm run test
+2025-12-27T01:41:46.3622043Z [36;1mnpm run test[0m
+2025-12-27T01:41:46.3657779Z shell: /usr/bin/bash -e {0}
+2025-12-27T01:41:46.3658022Z ##[endgroup]
+2025-12-27T01:41:46.4734726Z 
+2025-12-27T01:41:46.4735036Z > frontend@0.1.0 test
+2025-12-27T01:41:46.4735311Z > vitest run
+2025-12-27T01:41:46.4735454Z 
+2025-12-27T01:41:46.7434738Z 
+2025-12-27T01:41:46.7533582Z [1m[46m RUN [49m[22m [36mv4.0.16 [39m[90m/home/runner/work/web_coreL/web_coreL/frontend[39m
+2025-12-27T01:41:46.7534411Z 
+2025-12-27T01:41:47.0958887Z [90mstderr[2m | app/api/test-db/route_test.ts
+2025-12-27T01:41:47.0960659Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.0961547Z 
+2025-12-27T01:41:47.0962034Z [90mstderr[2m | app/api/newsletter/route_test.ts
+2025-12-27T01:41:47.0963541Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.0964554Z 
+2025-12-27T01:41:47.1074469Z [90mstdout[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:41:47.1076119Z [22m[39m=== お問い合わせAPI開始 ===
+2025-12-27T01:41:47.1076429Z 
+2025-12-27T01:41:47.1169671Z [90mstderr[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:41:47.1171135Z [22m[39mエラー: メール設定が未設定
+2025-12-27T01:41:47.1171879Z EMAIL_USER: 未設定
+2025-12-27T01:41:47.1172631Z EMAIL_PASS: 未設定
+2025-12-27T01:41:47.1174299Z 
+2025-12-27T01:41:47.1200232Z [90mstdout[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:41:47.1202565Z [22m[39m受信したデータ: { name: [32m'Taro'[39m, email: [32m'taro@example.com'[39m, messageLength: [33m2[39m }
+2025-12-27T01:41:47.1203188Z 
+2025-12-27T01:41:47.1204280Z [90mstdout[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mreturns 400 if required fields missing
+2025-12-27T01:41:47.1205368Z [22m[39m=== お問い合わせAPI開始 ===
+2025-12-27T01:41:47.1205821Z 
+2025-12-27T01:41:47.1206912Z [90mstdout[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mreturns 400 if required fields missing
+2025-12-27T01:41:47.1208391Z [22m[39m受信したデータ: { name: [32m''[39m, email: [32m''[39m, messageLength: [33m0[39m }
+2025-12-27T01:41:47.1209051Z エラー: 必須フィールドが空
+2025-12-27T01:41:47.1209234Z 
+2025-12-27T01:41:47.1216411Z  [31m❯[39m app/api/contact/route_test.ts [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 13[2mms[22m[39m
+2025-12-27T01:41:47.1217802Z [31m     [31m×[31m succeeds with valid payload[39m[32m 10[2mms[22m[39m
+2025-12-27T01:41:47.1222208Z      [32m✓[39m returns 400 if required fields missing[32m 1[2mms[22m[39m
+2025-12-27T01:41:47.2817511Z [90mstderr[2m | lib/prisma_test.ts
+2025-12-27T01:41:47.2818453Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.2818975Z 
+2025-12-27T01:41:47.3296270Z [90mstderr[2m | lib/wordpress_test.ts
+2025-12-27T01:41:47.3298593Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.3299982Z 
+2025-12-27T01:41:47.4982656Z [90mstderr[2m | app/api/newsletter/route.test.ts
+2025-12-27T01:41:47.4984353Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.4985214Z 
+2025-12-27T01:41:47.5505098Z [90mstderr[2m | lib/wordpress.test.ts
+2025-12-27T01:41:47.5507348Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.5509328Z 
+2025-12-27T01:41:47.6530466Z [90mstderr[2m | lib/prisma.test.ts
+2025-12-27T01:41:47.6532707Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.6546130Z 
+2025-12-27T01:41:47.6934718Z [90mstdout[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:41:47.6954328Z [22m[39m=== お問い合わせAPI開始 ===
+2025-12-27T01:41:47.6954910Z 
+2025-12-27T01:41:47.6957778Z [90mstderr[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:41:47.6959145Z [22m[39mエラー: メール設定が未設定
+2025-12-27T01:41:47.6959962Z EMAIL_USER: 未設定
+2025-12-27T01:41:47.6961176Z [90mstdout[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:41:47.6962171Z EMAIL_PASS: 未設定
+2025-12-27T01:41:47.6962379Z 
+2025-12-27T01:41:47.6964502Z [22m[39m受信したデータ: { name: [32m'Taro'[39m, email: [32m'taro@example.com'[39m, messageLength: [33m2[39m }
+2025-12-27T01:41:47.6965164Z 
+2025-12-27T01:41:47.7049178Z [90mstdout[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mreturns 400 if required fields missing
+2025-12-27T01:41:47.7050350Z [22m[39m=== お問い合わせAPI開始 ===
+2025-12-27T01:41:47.7050654Z 
+2025-12-27T01:41:47.7052039Z [90mstdout[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mreturns 400 if required fields missing
+2025-12-27T01:41:47.7055427Z [22m[39m受信したデータ: { name: [32m''[39m, email: [32m''[39m, messageLength: [33m0[39m }
+2025-12-27T01:41:47.7056708Z エラー: 必須フィールドが空
+2025-12-27T01:41:47.7057506Z 
+2025-12-27T01:41:47.7058943Z  [31m❯[39m app/api/contact/route.test.ts [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 15[2mms[22m[39m
+2025-12-27T01:41:47.7060622Z [31m     [31m×[31m succeeds with valid payload[39m[32m 12[2mms[22m[39m
+2025-12-27T01:41:47.7061927Z      [32m✓[39m returns 400 if required fields missing[32m 1[2mms[22m[39m
+2025-12-27T01:41:47.7489983Z [90mstderr[2m | app/api/test-db/route.test.ts
+2025-12-27T01:41:47.7492771Z [22m[39m[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+2025-12-27T01:41:47.7493663Z 
+2025-12-27T01:41:47.8554514Z 
+2025-12-27T01:41:47.8556577Z [31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Suites 10 [49m[22m[31m⎯⎯⎯⎯⎯⎯[39m
+2025-12-27T01:41:47.8558968Z 
+2025-12-27T01:41:47.8561813Z [41m[1m FAIL [22m[49m lib/prisma.test.ts[2m [ lib/prisma.test.ts ][22m
+2025-12-27T01:41:47.8562938Z [41m[1m FAIL [22m[49m lib/prisma_test.ts[2m [ lib/prisma_test.ts ][22m
+2025-12-27T01:41:47.8566742Z [31m[1mTypeError[22m: () => ({
+2025-12-27T01:41:47.8567488Z     $disconnect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0)
+2025-12-27T01:41:47.8568464Z   }) is not a constructor[39m
+2025-12-27T01:41:47.8573367Z [36m [2m❯[22m lib/prisma.ts:[2m7:49[22m[39m
+2025-12-27T01:41:47.8594311Z     [90m  5| [39m}[33m;[39m
+2025-12-27T01:41:47.8594796Z     [90m  6| [39m
+2025-12-27T01:41:47.8597979Z     [90m  7| [39m[35mexport[39m [35mconst[39m prisma [33m=[39m globalForPrisma[33m.[39mprisma [33m??[39m [35mnew[39m [33mPrismaClient[39m()[33m;[39m
+2025-12-27T01:41:47.8599554Z     [90m   | [39m                                                [31m^[39m
+2025-12-27T01:41:47.8600225Z     [90m  8| [39m
+2025-12-27T01:41:47.8601122Z     [90m  9| [39mif (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = pr…
+2025-12-27T01:41:47.8602288Z [90m [2m❯[22m lib/prisma_test.ts:[2m10:1[22m[39m
+2025-12-27T01:41:47.8602784Z 
+2025-12-27T01:41:47.8603732Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯[22m[39m
+2025-12-27T01:41:47.8604110Z 
+2025-12-27T01:41:47.8604838Z [41m[1m FAIL [22m[49m lib/wordpress.test.ts[2m [ lib/wordpress.test.ts ][22m
+2025-12-27T01:41:47.8606170Z [41m[1m FAIL [22m[49m lib/wordpress_test.ts[2m [ lib/wordpress_test.ts ][22m
+2025-12-27T01:41:47.8607366Z [31m[1mTypeError[22m: () => ({
+2025-12-27T01:41:47.8608699Z     request: __vite_ssr_import_0__.vi.fn().mockResolvedValue({ categories: { nodes: [{ id: "1", databa...<omitted>...}) is not a constructor[39m
+2025-12-27T01:41:47.8610277Z [36m [2m❯[22m lib/wordpress.ts:[2m6:16[22m[39m
+2025-12-27T01:41:47.8635479Z     [90m  4| [39m
+2025-12-27T01:41:47.8637565Z     [90m  5| [39m[90m// GraphQLクライアントの作成[39m
+2025-12-27T01:41:47.8638760Z     [90m  6| [39m[35mconst[39m client [33m=[39m [35mnew[39m [33mGraphQLClient[39m([33mGRAPHQL_URL[39m[33m,[39m {
+2025-12-27T01:41:47.8639740Z     [90m   | [39m               [31m^[39m
+2025-12-27T01:41:47.8640328Z     [90m  7| [39m  headers[33m:[39m {
+2025-12-27T01:41:47.8641228Z     [90m  8| [39m    'User-Agent': 'Mozilla/5.0 (compatible; NextJS/16.0; +https://core…
+2025-12-27T01:41:47.8642255Z [90m [2m❯[22m lib/wordpress_test.ts:[2m11:1[22m[39m
+2025-12-27T01:41:47.8642620Z 
+2025-12-27T01:41:47.8643058Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯[22m[39m
+2025-12-27T01:41:47.8643406Z 
+2025-12-27T01:41:47.8644231Z [41m[1m FAIL [22m[49m app/api/newsletter/route.test.ts[2m [ app/api/newsletter/route.test.ts ][22m
+2025-12-27T01:41:47.8646047Z [41m[1m FAIL [22m[49m app/api/newsletter/route_test.ts[2m [ app/api/newsletter/route_test.ts ][22m
+2025-12-27T01:41:47.8648544Z [31m[1mTypeError[22m: () => ({
+2025-12-27T01:41:47.8649002Z       newsletter,
+2025-12-27T01:41:47.8649601Z       $disconnect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0)
+2025-12-27T01:41:47.8650363Z     }) is not a constructor[39m
+2025-12-27T01:41:47.8651813Z [36m [2m❯[22m app/api/newsletter/route.ts:[2m4:16[22m[39m
+2025-12-27T01:41:47.8654225Z     [90m  2| [39m[35mimport[39m { [33mPrismaClient[39m } [35mfrom[39m [32m'@prisma/client'[39m[33m;[39m
+2025-12-27T01:41:47.8655008Z     [90m  3| [39m
+2025-12-27T01:41:47.8656336Z     [90m  4| [39m[35mconst[39m prisma [33m=[39m [35mnew[39m [33mPrismaClient[39m()[33m;[39m
+2025-12-27T01:41:47.8657177Z     [90m   | [39m               [31m^[39m
+2025-12-27T01:41:47.8657648Z     [90m  5| [39m
+2025-12-27T01:41:47.8658654Z     [90m  6| [39m[35mexport[39m [35masync[39m [35mfunction[39m [33mPOST[39m(request[33m:[39m [33mNextRequest[39m) {
+2025-12-27T01:41:47.8659852Z [90m [2m❯[22m app/api/newsletter/route_test.ts:[2m23:1[22m[39m
+2025-12-27T01:41:47.8660276Z 
+2025-12-27T01:41:47.8660677Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯[22m[39m
+2025-12-27T01:41:47.8661008Z 
+2025-12-27T01:41:47.8661729Z [41m[1m FAIL [22m[49m app/api/test-db/route.test.ts[2m [ app/api/test-db/route.test.ts ][22m
+2025-12-27T01:41:47.8663576Z [41m[1m FAIL [22m[49m app/api/test-db/route_test.ts[2m [ app/api/test-db/route_test.ts ][22m
+2025-12-27T01:41:47.8664638Z [31m[1mTypeError[22m: () => ({
+2025-12-27T01:41:47.8665248Z     $connect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0),
+2025-12-27T01:41:47.8666625Z     $disconnect: __vite_ssr_imp...<omitted>...}) is not a constructor[39m
+2025-12-27T01:41:47.8667657Z [36m [2m❯[22m app/api/test-db/route.ts:[2m4:16[22m[39m
+2025-12-27T01:41:47.8669126Z     [90m  2| [39m[35mimport[39m { [33mPrismaClient[39m } [35mfrom[39m [32m'@prisma/client'[39m[33m;[39m
+2025-12-27T01:41:47.8669899Z     [90m  3| [39m
+2025-12-27T01:41:47.8670648Z     [90m  4| [39m[35mconst[39m prisma [33m=[39m [35mnew[39m [33mPrismaClient[39m()[33m;[39m
+2025-12-27T01:41:47.8671433Z     [90m   | [39m               [31m^[39m
+2025-12-27T01:41:47.8672010Z     [90m  5| [39m
+2025-12-27T01:41:47.8672720Z     [90m  6| [39m[35mexport[39m [35masync[39m [35mfunction[39m [33mGET[39m() {
+2025-12-27T01:41:47.8673658Z [90m [2m❯[22m app/api/test-db/route_test.ts:[2m16:1[22m[39m
+2025-12-27T01:41:47.8674070Z 
+2025-12-27T01:41:47.8674454Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯[22m[39m
+2025-12-27T01:41:47.8674761Z 
+2025-12-27T01:41:47.8675634Z [41m[1m FAIL [22m[49m app/posts/[slug]/page.test.tsx[2m [ app/posts/[slug]/page.test.tsx ][22m
+2025-12-27T01:41:47.8677163Z [41m[1m FAIL [22m[49m app/posts/[slug]/page_test.tsx[2m [ app/posts/[slug]/page_test.tsx ][22m
+2025-12-27T01:41:47.8679137Z [31m[1mError[22m: Cannot find package '@/lib/wordpress' imported from '/home/runner/work/web_coreL/web_coreL/frontend/app/posts/[slug]/page.tsx'[39m
+2025-12-27T01:41:47.8680537Z [36m [2m❯[22m app/posts/[slug]/page.tsx:[2m3:1[22m[39m
+2025-12-27T01:41:47.8693788Z     [90m  1| [39m[35mimport[39m { notFound } [35mfrom[39m [32m'next/navigation'[39m[33m;[39m
+2025-12-27T01:41:47.8713523Z     [90m  2| [39m[35mimport[39m [33mImage[39m [35mfrom[39m [32m'next/image'[39m[33m;[39m
+2025-12-27T01:41:47.8714663Z     [90m  3| [39mimport { getPostBySlug, getPosts, getPopularPosts } from '@/lib/wordpr…
+2025-12-27T01:41:47.8715928Z     [90m   | [39m[31m^[39m
+2025-12-27T01:41:47.8716962Z     [90m  4| [39m[35mimport[39m [33mHeader[39m [35mfrom[39m [32m'@/components/Header'[39m[33m;[39m
+2025-12-27T01:41:47.8718171Z     [90m  5| [39m[35mimport[39m [33mFooter[39m [35mfrom[39m [32m'@/components/Footer'[39m[33m;[39m
+2025-12-27T01:41:47.8719375Z [90m [2m❯[22m app/posts/[slug]/page_test.tsx:[2m9:1[22m[39m
+2025-12-27T01:41:47.8719935Z 
+2025-12-27T01:41:47.8720344Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯[22m[39m
+2025-12-27T01:41:47.8720678Z 
+2025-12-27T01:41:47.8720689Z 
+2025-12-27T01:41:47.8721184Z [31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+2025-12-27T01:41:47.8721576Z 
+2025-12-27T01:41:47.8722504Z [41m[1m FAIL [22m[49m app/api/contact/route.test.ts[2m > [22mPOST /api/contact[2m > [22msucceeds with valid payload
+2025-12-27T01:41:47.8724096Z [41m[1m FAIL [22m[49m app/api/contact/route_test.ts[2m > [22mPOST /api/contact[2m > [22msucceeds with valid payload
+2025-12-27T01:41:47.8725435Z [31m[1mAssertionError[22m: expected undefined to be true // Object.is equality[39m
+2025-12-27T01:41:47.8726142Z 
+2025-12-27T01:41:47.8726390Z [32m- Expected:[39m 
+2025-12-27T01:41:47.8726792Z true
+2025-12-27T01:41:47.8726988Z 
+2025-12-27T01:41:47.8727233Z [31m+ Received:[39m 
+2025-12-27T01:41:47.8727619Z undefined
+2025-12-27T01:41:47.8727837Z 
+2025-12-27T01:41:47.8728415Z [36m [2m❯[22m app/api/contact/route_test.ts:[2m22:33[22m[39m
+2025-12-27T01:41:47.8729525Z     [90m 20| [39m    const req = { json: async () => ({ name: 'Taro', email: 'taro@exam…
+2025-12-27T01:41:47.8730604Z     [90m 21| [39m    [35mconst[39m res [33m=[39m [35mawait[39m route[33m.[39m[33mPOST[39m(req)[33m;[39m
+2025-12-27T01:41:47.8731927Z     [90m 22| [39m    [34mexpect[39m(res[33m.[39mpayload[33m.[39msuccess)[33m.[39m[34mtoBe[39m([35mtrue[39m)[33m;[39m
+2025-12-27T01:41:47.8732997Z     [90m   | [39m                                [31m^[39m
+2025-12-27T01:41:47.8734125Z     [90m 23| [39m    [34mexpect[39m(res[33m.[39mpayload)[33m.[39m[34mtoHaveProperty[39m([32m'messageId'[39m)[33m;[39m
+2025-12-27T01:41:47.8735022Z     [90m 24| [39m  })[33m;[39m
+2025-12-27T01:41:47.8735317Z 
+2025-12-27T01:41:47.8735887Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/12]⎯[22m[39m
+2025-12-27T01:41:47.8736213Z 
+2025-12-27T01:41:47.8736263Z 
+2025-12-27T01:41:47.8736777Z [2m Test Files [22m [1m[31m12 failed[39m[22m[90m (12)[39m
+2025-12-27T01:41:47.8737843Z [2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (4)[39m
+2025-12-27T01:41:47.8738642Z [2m   Start at [22m 01:41:46
+2025-12-27T01:41:47.8739720Z [2m   Duration [22m 1.10s[2m (transform 385ms, setup 0ms, import 148ms, tests 28ms, environment 2ms)[22m
+2025-12-27T01:41:47.8740325Z 
+2025-12-27T01:41:47.8751542Z 
+2025-12-27T01:41:47.8782261Z ##[error]TypeError: () => ({
+    $disconnect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0)
+  }) is not a constructor
+ ❯ lib/prisma.ts:7:49
+ ❯ lib/prisma_test.ts:10:1
+
+
+2025-12-27T01:41:47.8792757Z 
+2025-12-27T01:41:47.8795432Z ##[error]TypeError: () => ({
+    $disconnect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0)
+  }) is not a constructor
+ ❯ lib/prisma.ts:7:49
+ ❯ lib/prisma_test.ts:10:1
+
+
+2025-12-27T01:41:47.8797654Z 
+2025-12-27T01:41:47.8800551Z ##[error]TypeError: () => ({
+    request: __vite_ssr_import_0__.vi.fn().mockResolvedValue({ categories: { nodes: [{ id: "1", databa...<omitted>...}) is not a constructor
+ ❯ lib/wordpress.ts:6:16
+ ❯ lib/wordpress_test.ts:11:1
+
+
+2025-12-27T01:41:47.8802850Z 
+2025-12-27T01:41:47.8806051Z ##[error]TypeError: () => ({
+    request: __vite_ssr_import_0__.vi.fn().mockResolvedValue({ categories: { nodes: [{ id: "1", databa...<omitted>...}) is not a constructor
+ ❯ lib/wordpress.ts:6:16
+ ❯ lib/wordpress_test.ts:11:1
+
+
+2025-12-27T01:41:47.8808038Z 
+2025-12-27T01:41:47.8810576Z ##[error]AssertionError: expected undefined to be true // Object.is equality
+
+- Expected: 
+true
+
++ Received: 
+undefined
+
+ ❯ app/api/contact/route_test.ts:22:33
+
+
+2025-12-27T01:41:47.8812319Z 
+2025-12-27T01:41:47.8814779Z ##[error]AssertionError: expected undefined to be true // Object.is equality
+
+- Expected: 
+true
+
++ Received: 
+undefined
+
+ ❯ app/api/contact/route_test.ts:22:33
+
+
+2025-12-27T01:41:47.8816804Z 
+2025-12-27T01:41:47.8819691Z ##[error]TypeError: () => ({
+      newsletter,
+      $disconnect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0)
+    }) is not a constructor
+ ❯ app/api/newsletter/route.ts:4:16
+ ❯ app/api/newsletter/route_test.ts:23:1
+
+
+2025-12-27T01:41:47.8821698Z 
+2025-12-27T01:41:47.8824650Z ##[error]TypeError: () => ({
+      newsletter,
+      $disconnect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0)
+    }) is not a constructor
+ ❯ app/api/newsletter/route.ts:4:16
+ ❯ app/api/newsletter/route_test.ts:23:1
+
+
+2025-12-27T01:41:47.8826982Z 
+2025-12-27T01:41:47.8829951Z ##[error]TypeError: () => ({
+    $connect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0),
+    $disconnect: __vite_ssr_imp...<omitted>...}) is not a constructor
+ ❯ app/api/test-db/route.ts:4:16
+ ❯ app/api/test-db/route_test.ts:16:1
+
+
+2025-12-27T01:41:47.8832220Z 
+2025-12-27T01:41:47.8834931Z ##[error]TypeError: () => ({
+    $connect: __vite_ssr_import_0__.vi.fn().mockResolvedValue(void 0),
+    $disconnect: __vite_ssr_imp...<omitted>...}) is not a constructor
+ ❯ app/api/test-db/route.ts:4:16
+ ❯ app/api/test-db/route_test.ts:16:1
+
+
+2025-12-27T01:41:47.8837294Z 
+2025-12-27T01:41:47.8840805Z ##[error]Error: Cannot find package '@/lib/wordpress' imported from '/home/runner/work/web_coreL/web_coreL/frontend/app/posts/[slug]/page.tsx'
+ ❯ app/posts/[slug]/page.tsx:3:1
+ ❯ app/posts/[slug]/page_test.tsx:9:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_MODULE_NOT_FOUND' }
+
+2025-12-27T01:41:47.8843268Z 
+2025-12-27T01:41:47.8847328Z ##[error]Error: Cannot find package '@/lib/wordpress' imported from '/home/runner/work/web_coreL/web_coreL/frontend/app/posts/[slug]/page.tsx'
+ ❯ app/posts/[slug]/page.tsx:3:1
+ ❯ app/posts/[slug]/page_test.tsx:9:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_MODULE_NOT_FOUND' }
+
+2025-12-27T01:41:47.9079682Z ##[error]Process completed with exit code 1.

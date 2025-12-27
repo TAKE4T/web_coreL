@@ -6,6 +6,11 @@ vi.mock('@/lib/wordpress', async () => {
   };
 });
 
+// Mock components to avoid resolving actual React components in the test env
+vi.mock('@/components/Header', () => ({ default: () => 'Header' }));
+vi.mock('@/components/Footer', () => ({ default: () => 'Footer' }));
+vi.mock('@/components/ArticleCard', () => ({ default: () => 'ArticleCard' }));
+
 import { generateMetadata } from './page';
 
 describe('posts/[slug]/page', () => {

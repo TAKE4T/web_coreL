@@ -1,0 +1,466 @@
+﻿2025-12-27T01:48:51.4715172Z Current runner version: '2.330.0'
+2025-12-27T01:48:51.4742393Z ##[group]Runner Image Provisioner
+2025-12-27T01:48:51.4743209Z Hosted Compute Agent
+2025-12-27T01:48:51.4744094Z Version: 20251211.462
+2025-12-27T01:48:51.4744755Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+2025-12-27T01:48:51.4745473Z Build Date: 2025-12-11T16:28:49Z
+2025-12-27T01:48:51.4746083Z Worker ID: {640d68b8-6bf5-402f-8f09-58d5f1e04047}
+2025-12-27T01:48:51.4746831Z ##[endgroup]
+2025-12-27T01:48:51.4747338Z ##[group]Operating System
+2025-12-27T01:48:51.4747897Z Ubuntu
+2025-12-27T01:48:51.4748310Z 24.04.3
+2025-12-27T01:48:51.4748871Z LTS
+2025-12-27T01:48:51.4749286Z ##[endgroup]
+2025-12-27T01:48:51.4749790Z ##[group]Runner Image
+2025-12-27T01:48:51.4750426Z Image: ubuntu-24.04
+2025-12-27T01:48:51.4750942Z Version: 20251215.174.1
+2025-12-27T01:48:51.4751945Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251215.174/images/ubuntu/Ubuntu2404-Readme.md
+2025-12-27T01:48:51.4753765Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251215.174
+2025-12-27T01:48:51.4754774Z ##[endgroup]
+2025-12-27T01:48:51.4755938Z ##[group]GITHUB_TOKEN Permissions
+2025-12-27T01:48:51.4758105Z Contents: read
+2025-12-27T01:48:51.4758757Z Metadata: read
+2025-12-27T01:48:51.4759234Z Packages: read
+2025-12-27T01:48:51.4759733Z ##[endgroup]
+2025-12-27T01:48:51.4761856Z Secret source: Actions
+2025-12-27T01:48:51.4762859Z Prepare workflow directory
+2025-12-27T01:48:51.5165362Z Prepare all required actions
+2025-12-27T01:48:51.5204117Z Getting action download info
+2025-12-27T01:48:51.8105267Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2025-12-27T01:48:51.9221688Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2025-12-27T01:48:52.1441477Z Complete job name: test
+2025-12-27T01:48:52.2168296Z ##[group]Run actions/checkout@v4
+2025-12-27T01:48:52.2169183Z with:
+2025-12-27T01:48:52.2169578Z   repository: TAKE4T/web_coreL
+2025-12-27T01:48:52.2170281Z   token: ***
+2025-12-27T01:48:52.2170656Z   ssh-strict: true
+2025-12-27T01:48:52.2171039Z   ssh-user: git
+2025-12-27T01:48:52.2171430Z   persist-credentials: true
+2025-12-27T01:48:52.2171873Z   clean: true
+2025-12-27T01:48:52.2172257Z   sparse-checkout-cone-mode: true
+2025-12-27T01:48:52.2172732Z   fetch-depth: 1
+2025-12-27T01:48:52.2173111Z   fetch-tags: false
+2025-12-27T01:48:52.2173664Z   show-progress: true
+2025-12-27T01:48:52.2174066Z   lfs: false
+2025-12-27T01:48:52.2174446Z   submodules: false
+2025-12-27T01:48:52.2174842Z   set-safe-directory: true
+2025-12-27T01:48:52.2175510Z ##[endgroup]
+2025-12-27T01:48:52.3274147Z Syncing repository: TAKE4T/web_coreL
+2025-12-27T01:48:52.3275929Z ##[group]Getting Git version info
+2025-12-27T01:48:52.3276630Z Working directory is '/home/runner/work/web_coreL/web_coreL'
+2025-12-27T01:48:52.3277662Z [command]/usr/bin/git version
+2025-12-27T01:48:52.3687822Z git version 2.52.0
+2025-12-27T01:48:52.3714672Z ##[endgroup]
+2025-12-27T01:48:52.3729735Z Temporarily overriding HOME='/home/runner/work/_temp/775aeadc-0e8b-4878-894c-cc481d25289d' before making global git config changes
+2025-12-27T01:48:52.3731131Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-27T01:48:52.3743167Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/web_coreL/web_coreL
+2025-12-27T01:48:52.3783394Z Deleting the contents of '/home/runner/work/web_coreL/web_coreL'
+2025-12-27T01:48:52.3787196Z ##[group]Initializing the repository
+2025-12-27T01:48:52.3791086Z [command]/usr/bin/git init /home/runner/work/web_coreL/web_coreL
+2025-12-27T01:48:52.3878168Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-27T01:48:52.3879801Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-27T01:48:52.3881367Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-27T01:48:52.3882622Z hint: call:
+2025-12-27T01:48:52.3883716Z hint:
+2025-12-27T01:48:52.3884729Z hint: 	git config --global init.defaultBranch <name>
+2025-12-27T01:48:52.3885341Z hint:
+2025-12-27T01:48:52.3885897Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-27T01:48:52.3886838Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-27T01:48:52.3887552Z hint:
+2025-12-27T01:48:52.3887930Z hint: 	git branch -m <name>
+2025-12-27T01:48:52.3888426Z hint:
+2025-12-27T01:48:52.3889360Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-27T01:48:52.3890394Z Initialized empty Git repository in /home/runner/work/web_coreL/web_coreL/.git/
+2025-12-27T01:48:52.3894744Z [command]/usr/bin/git remote add origin https://github.com/TAKE4T/web_coreL
+2025-12-27T01:48:52.3929172Z ##[endgroup]
+2025-12-27T01:48:52.3929907Z ##[group]Disabling automatic garbage collection
+2025-12-27T01:48:52.3933240Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-27T01:48:52.3962251Z ##[endgroup]
+2025-12-27T01:48:52.3962938Z ##[group]Setting up auth
+2025-12-27T01:48:52.3969807Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-27T01:48:52.4001075Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-27T01:48:52.4330076Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-27T01:48:52.4364961Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-27T01:48:52.4611338Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-27T01:48:52.4654980Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-27T01:48:52.4910011Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-27T01:48:52.4948687Z ##[endgroup]
+2025-12-27T01:48:52.4949956Z ##[group]Fetching the repository
+2025-12-27T01:48:52.4958628Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6e60bb64dad424e6139b080db5de8a61fd2ddf44:refs/remotes/origin/main
+2025-12-27T01:48:52.6485606Z From https://github.com/TAKE4T/web_coreL
+2025-12-27T01:48:52.6486521Z  * [new ref]         6e60bb64dad424e6139b080db5de8a61fd2ddf44 -> origin/main
+2025-12-27T01:48:52.6518078Z ##[endgroup]
+2025-12-27T01:48:52.6518762Z ##[group]Determining the checkout info
+2025-12-27T01:48:52.6520111Z ##[endgroup]
+2025-12-27T01:48:52.6525569Z [command]/usr/bin/git sparse-checkout disable
+2025-12-27T01:48:52.6569101Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-27T01:48:52.6595522Z ##[group]Checking out the ref
+2025-12-27T01:48:52.6600084Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-12-27T01:48:52.6689801Z Switched to a new branch 'main'
+2025-12-27T01:48:52.6692031Z branch 'main' set up to track 'origin/main'.
+2025-12-27T01:48:52.6699662Z ##[endgroup]
+2025-12-27T01:48:52.6735577Z [command]/usr/bin/git log -1 --format=%H
+2025-12-27T01:48:52.6757223Z 6e60bb64dad424e6139b080db5de8a61fd2ddf44
+2025-12-27T01:48:52.6997225Z ##[group]Run actions/setup-node@v4
+2025-12-27T01:48:52.6997765Z with:
+2025-12-27T01:48:52.6998100Z   node-version: 20
+2025-12-27T01:48:52.6998484Z   always-auth: false
+2025-12-27T01:48:52.6998866Z   check-latest: false
+2025-12-27T01:48:52.6999403Z   token: ***
+2025-12-27T01:48:52.6999764Z ##[endgroup]
+2025-12-27T01:48:52.8838634Z Found in cache @ /opt/hostedtoolcache/node/20.19.6/x64
+2025-12-27T01:48:52.8848109Z ##[group]Environment details
+2025-12-27T01:48:53.2067470Z node: v20.19.6
+2025-12-27T01:48:53.2068164Z npm: 10.8.2
+2025-12-27T01:48:53.2068724Z yarn: 1.22.22
+2025-12-27T01:48:53.2070363Z ##[endgroup]
+2025-12-27T01:48:53.2182791Z ##[group]Run npm install
+2025-12-27T01:48:53.2183322Z [36;1mnpm install[0m
+2025-12-27T01:48:53.2226875Z shell: /usr/bin/bash -e {0}
+2025-12-27T01:48:53.2227322Z env:
+2025-12-27T01:48:53.2227690Z   DATABASE_URL: file:./dev.db
+2025-12-27T01:48:53.2228098Z ##[endgroup]
+2025-12-27T01:49:20.3270826Z npm warn ERESOLVE overriding peer dependency
+2025-12-27T01:49:20.3271755Z npm warn While resolving: @auth/core@0.41.0
+2025-12-27T01:49:20.3272279Z npm warn Found: nodemailer@7.0.12
+2025-12-27T01:49:20.3272689Z npm warn node_modules/nodemailer
+2025-12-27T01:49:20.3273158Z npm warn   nodemailer@"^7.0.10" from the root project
+2025-12-27T01:49:20.3274017Z npm warn   2 more (next-auth, @auth/core)
+2025-12-27T01:49:20.3274402Z npm warn
+2025-12-27T01:49:20.3274770Z npm warn Could not resolve dependency:
+2025-12-27T01:49:20.3275310Z npm warn peerOptional nodemailer@"^6.8.0" from @auth/core@0.41.0
+2025-12-27T01:49:20.3275892Z npm warn node_modules/next-auth/node_modules/@auth/core
+2025-12-27T01:49:20.3276536Z npm warn   @auth/core@"0.41.0" from next-auth@5.0.0-beta.30
+2025-12-27T01:49:20.3277006Z npm warn   node_modules/next-auth
+2025-12-27T01:49:20.3277325Z npm warn
+2025-12-27T01:49:20.3277720Z npm warn Conflicting peer dependency: nodemailer@6.10.1
+2025-12-27T01:49:20.3278177Z npm warn node_modules/nodemailer
+2025-12-27T01:49:20.3278695Z npm warn   peerOptional nodemailer@"^6.8.0" from @auth/core@0.41.0
+2025-12-27T01:49:20.3279246Z npm warn   node_modules/next-auth/node_modules/@auth/core
+2025-12-27T01:49:20.3279799Z npm warn     @auth/core@"0.41.0" from next-auth@5.0.0-beta.30
+2025-12-27T01:49:20.3280273Z npm warn     node_modules/next-auth
+2025-12-27T01:49:36.3914987Z 
+2025-12-27T01:49:36.3915758Z > frontend@0.1.0 postinstall
+2025-12-27T01:49:36.3916285Z > prisma generate
+2025-12-27T01:49:36.3916498Z 
+2025-12-27T01:49:37.1068513Z Loaded Prisma config from prisma.config.ts.
+2025-12-27T01:49:37.1069079Z 
+2025-12-27T01:49:37.2521705Z Prisma config detected, skipping environment variable loading.
+2025-12-27T01:49:37.2528695Z Prisma schema loaded from prisma/schema.prisma
+2025-12-27T01:49:37.4837583Z ┌─────────────────────────────────────────────────────────┐
+2025-12-27T01:49:37.4838666Z │  Update available 6.19.1 -> 7.2.0                       │
+2025-12-27T01:49:37.4839566Z │                                                         │
+2025-12-27T01:49:37.4840519Z │  This is a major update - please follow the guide at    │
+2025-12-27T01:49:37.4841674Z │  https://pris.ly/d/major-version-upgrade                │
+2025-12-27T01:49:37.4842597Z │                                                         │
+2025-12-27T01:49:37.4843413Z │  Run the following to update                            │
+2025-12-27T01:49:37.4845686Z │    npm i --save-dev prisma@latest                       │
+2025-12-27T01:49:37.4846471Z │    npm i @prisma/client@latest                          │
+2025-12-27T01:49:37.4847255Z └─────────────────────────────────────────────────────────┘
+2025-12-27T01:49:37.4847696Z 
+2025-12-27T01:49:37.4848431Z ✔ Generated Prisma Client (v6.19.1) to ./node_modules/@prisma/client in 105ms
+2025-12-27T01:49:37.4848994Z 
+2025-12-27T01:49:37.4849607Z Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+2025-12-27T01:49:37.4850196Z 
+2025-12-27T01:49:37.4851093Z Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
+2025-12-27T01:49:37.4851883Z 
+2025-12-27T01:49:37.5137739Z 
+2025-12-27T01:49:37.5139660Z added 582 packages, and audited 583 packages in 44s
+2025-12-27T01:49:37.5141641Z 
+2025-12-27T01:49:37.5141935Z 172 packages are looking for funding
+2025-12-27T01:49:37.5143728Z   run `npm fund` for details
+2025-12-27T01:49:37.5152164Z 
+2025-12-27T01:49:37.5152481Z found 0 vulnerabilities
+2025-12-27T01:49:37.5613195Z ##[group]Run npm run test
+2025-12-27T01:49:37.5613730Z [36;1mnpm run test[0m
+2025-12-27T01:49:37.5648713Z shell: /usr/bin/bash -e {0}
+2025-12-27T01:49:37.5648946Z ##[endgroup]
+2025-12-27T01:49:37.6770711Z 
+2025-12-27T01:49:37.9715908Z > frontend@0.1.0 test
+2025-12-27T01:49:37.9716420Z > vitest run
+2025-12-27T01:49:37.9716614Z 
+2025-12-27T01:49:37.9716629Z 
+2025-12-27T01:49:37.9717749Z [1m[46m RUN [49m[22m [36mv4.0.16 [39m[90m/home/runner/work/web_coreL/web_coreL/frontend[39m
+2025-12-27T01:49:37.9718309Z 
+2025-12-27T01:49:38.3384186Z [90mstdout[2m | app/api/newsletter/route_test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns success for valid email
+2025-12-27T01:49:38.3415560Z [22m[39m=== メルマガ登録API開始 ===
+2025-12-27T01:49:38.3415938Z 
+2025-12-27T01:49:38.3418785Z [90mstdout[2m | app/api/newsletter/route_test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns success for valid email
+2025-12-27T01:49:38.3421965Z [22m[39m受信したメールアドレス: test@example.com
+2025-12-27T01:49:38.3422963Z データベース接続確認...
+2025-12-27T01:49:38.3423677Z DATABASE_URL: 未設定
+2025-12-27T01:49:38.3424103Z データベースに保存中...
+2025-12-27T01:49:38.3424304Z 
+2025-12-27T01:49:38.3425426Z [90mstdout[2m | app/api/newsletter/route_test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns success for valid email
+2025-12-27T01:49:38.3426559Z [22m[39m保存成功: mock-id
+2025-12-27T01:49:38.3426802Z 
+2025-12-27T01:49:38.3427930Z [90mstdout[2m | app/api/newsletter/route_test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns success for valid email
+2025-12-27T01:49:38.3429084Z [22m[39m=== メルマガ登録API終了 ===
+2025-12-27T01:49:38.3429365Z 
+2025-12-27T01:49:38.3430423Z [90mstdout[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:49:38.3431523Z [22m[39m=== お問い合わせAPI開始 ===
+2025-12-27T01:49:38.3431814Z 
+2025-12-27T01:49:38.3432900Z [90mstdout[2m | app/api/newsletter/route_test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns 400 for empty email
+2025-12-27T01:49:38.3434320Z [22m[39m=== メルマガ登録API開始 ===
+2025-12-27T01:49:38.3434596Z 
+2025-12-27T01:49:38.3435614Z [90mstdout[2m | app/api/newsletter/route_test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns 400 for empty email
+2025-12-27T01:49:38.3436855Z [22m[39m受信したメールアドレス: [90mundefined[39m
+2025-12-27T01:49:38.3437441Z エラー: メールアドレスが空
+2025-12-27T01:49:38.3437644Z 
+2025-12-27T01:49:38.3438677Z [90mstdout[2m | app/api/newsletter/route_test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns 400 for empty email
+2025-12-27T01:49:38.3439767Z [22m[39m=== メルマガ登録API終了 ===
+2025-12-27T01:49:38.3440043Z 
+2025-12-27T01:49:38.3441103Z [90mstdout[2m | app/api/test-db/route_test.ts[2m > [22m[2mGET /api/test-db[2m > [22m[2mreturns success and newsletters list
+2025-12-27T01:49:38.3442117Z [22m[39m=== データベーステスト開始 ===
+2025-12-27T01:49:38.3442668Z DATABASE_URL: 未設定
+2025-12-27T01:49:38.3442885Z 
+2025-12-27T01:49:38.3444175Z [90mstdout[2m | app/api/test-db/route_test.ts[2m > [22m[2mGET /api/test-db[2m > [22m[2mreturns success and newsletters list
+2025-12-27T01:49:38.3445274Z [22m[39m✓ データベース接続成功
+2025-12-27T01:49:38.3445526Z 
+2025-12-27T01:49:38.3446610Z [90mstdout[2m | app/api/test-db/route_test.ts[2m > [22m[2mGET /api/test-db[2m > [22m[2mreturns success and newsletters list
+2025-12-27T01:49:38.3447741Z [22m[39m✓ Newsletter件数: [33m2[39m
+2025-12-27T01:49:38.3448055Z 
+2025-12-27T01:49:38.3449085Z [90mstdout[2m | app/api/test-db/route_test.ts[2m > [22m[2mGET /api/test-db[2m > [22m[2mreturns success and newsletters list
+2025-12-27T01:49:38.3450547Z [22m[39m✓ Newsletter一覧: [ { id: [32m'a'[39m, email: [32m'a@example.com'[39m } ]
+2025-12-27T01:49:38.3451079Z 
+2025-12-27T01:49:38.3466353Z  [32m✓[39m app/api/newsletter/route_test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+2025-12-27T01:49:38.3518497Z [90mstderr[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:49:38.3520160Z [22m[39m=== お問い合わせエラー詳細 ===
+2025-12-27T01:49:38.3521382Z [90mstdout[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:49:38.3523769Z [22m[39m受信したデータ: { name: [32m'Taro'[39m, email: [32m'taro@example.com'[39m, messageLength: [33m2[39m }
+2025-12-27T01:49:38.3525838Z エラーメッセージ: Error: [vitest] No "default" export is defined on the "nodemailer" mock. Did you forget to return it from "vi.mock"?
+2025-12-27T01:49:38.3526739Z メール送信準備中...
+2025-12-27T01:49:38.3533881Z If you need to partially mock a module, you can use "importOriginal" helper inside:
+2025-12-27T01:49:38.3534703Z 送信元: test@example.com
+2025-12-27T01:49:38.3542048Z 
+2025-12-27T01:49:38.3542372Z 送信先: test@example.com
+2025-12-27T01:49:38.3546433Z     at VitestMocker.createError [90m(file:///home/runner/work/web_coreL/web_coreL/frontend/[39mnode_modules/[4mvitest[24m/dist/chunks/startModuleRunner.DpqpB8k3.js:311:17[90m)[39m
+2025-12-27T01:49:38.3547577Z 
+2025-12-27T01:49:38.3548912Z     at Object.get [90m(file:///home/runner/work/web_coreL/web_coreL/frontend/[39mnode_modules/[4mvitest[24m/dist/chunks/startModuleRunner.DpqpB8k3.js:384:16[90m)[39m
+2025-12-27T01:49:38.3553132Z     at Module.POST [90m(/home/runner/work/web_coreL/web_coreL/frontend/[39mapp/api/contact/route.ts:46:25[90m)[39m
+2025-12-27T01:49:38.3554760Z [90m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m
+2025-12-27T01:49:38.3555963Z     at [90m/home/runner/work/web_coreL/web_coreL/frontend/[39mapp/api/contact/route_test.ts:26:17
+2025-12-27T01:49:38.3557487Z     at [90mfile:///home/runner/work/web_coreL/web_coreL/frontend/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:915:20 {
+2025-12-27T01:49:38.3558791Z   codeFrame: [32m'vi.mock(import("nodemailer"), async (importOriginal) => {\n'[39m +
+2025-12-27T01:49:38.3559693Z     [32m'  const actual = await importOriginal()\n'[39m +
+2025-12-27T01:49:38.3560318Z     [32m'  return {\n'[39m +
+2025-12-27T01:49:38.3560821Z     [32m'    ...actual,\n'[39m +
+2025-12-27T01:49:38.3561397Z     [32m'    // your mocked methods\n'[39m +
+2025-12-27T01:49:38.3561915Z     [32m'  }\n'[39m +
+2025-12-27T01:49:38.3562312Z     [32m'})'[39m
+2025-12-27T01:49:38.3562616Z }
+2025-12-27T01:49:38.3564030Z エラースタック: Error: [vitest] No "default" export is defined on the "nodemailer" mock. Did you forget to return it from "vi.mock"?
+2025-12-27T01:49:38.3565350Z If you need to partially mock a module, you can use "importOriginal" helper inside:
+2025-12-27T01:49:38.3565919Z 
+2025-12-27T01:49:38.3567020Z     at VitestMocker.createError (file:///home/runner/work/web_coreL/web_coreL/frontend/node_modules/vitest/dist/chunks/startModuleRunner.DpqpB8k3.js:311:17)
+2025-12-27T01:49:38.3568905Z     at Object.get (file:///home/runner/work/web_coreL/web_coreL/frontend/node_modules/vitest/dist/chunks/startModuleRunner.DpqpB8k3.js:384:16)
+2025-12-27T01:49:38.3570380Z     at Module.POST (/home/runner/work/web_coreL/web_coreL/frontend/app/api/contact/route.ts:46:25)
+2025-12-27T01:49:38.3571419Z     at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-12-27T01:49:38.3572417Z     at /home/runner/work/web_coreL/web_coreL/frontend/app/api/contact/route_test.ts:26:17
+2025-12-27T01:49:38.3573816Z     at file:///home/runner/work/web_coreL/web_coreL/frontend/node_modules/@vitest/runner/dist/index.js:915:20
+2025-12-27T01:49:38.3574498Z 
+2025-12-27T01:49:38.3575577Z [90mstdout[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mreturns 400 if required fields missing
+2025-12-27T01:49:38.3576630Z [22m[39m=== お問い合わせAPI開始 ===
+2025-12-27T01:49:38.3576882Z 
+2025-12-27T01:49:38.3577930Z [90mstdout[2m | app/api/contact/route_test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mreturns 400 if required fields missing
+2025-12-27T01:49:38.3579292Z [22m[39m受信したデータ: { name: [32m''[39m, email: [32m''[39m, messageLength: [33m0[39m }
+2025-12-27T01:49:38.3580307Z エラー: 必須フィールドが空
+2025-12-27T01:49:38.3580629Z 
+2025-12-27T01:49:38.3581298Z  [32m✓[39m app/api/test-db/route_test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 11[2mms[22m[39m
+2025-12-27T01:49:38.3652566Z  [31m❯[39m app/api/contact/route_test.ts [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 20[2mms[22m[39m
+2025-12-27T01:49:38.3655240Z [31m     [31m×[31m succeeds with valid payload[39m[32m 16[2mms[22m[39m
+2025-12-27T01:49:38.3656417Z      [32m✓[39m returns 400 if required fields missing[32m 1[2mms[22m[39m
+2025-12-27T01:49:38.5591666Z  [32m✓[39m lib/prisma_test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 4[2mms[22m[39m
+2025-12-27T01:49:38.5668378Z  [32m✓[39m lib/wordpress_test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 5[2mms[22m[39m
+2025-12-27T01:49:38.8765260Z  [32m✓[39m lib/wordpress.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 7[2mms[22m[39m
+2025-12-27T01:49:38.9099347Z [90mstdout[2m | app/api/newsletter/route.test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns success for valid email
+2025-12-27T01:49:38.9115003Z [22m[39m=== メルマガ登録API開始 ===
+2025-12-27T01:49:38.9115289Z 
+2025-12-27T01:49:38.9116358Z [90mstdout[2m | app/api/newsletter/route.test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns success for valid email
+2025-12-27T01:49:38.9117470Z [22m[39m受信したメールアドレス: test@example.com
+2025-12-27T01:49:38.9117942Z データベース接続確認...
+2025-12-27T01:49:38.9118338Z DATABASE_URL: 未設定
+2025-12-27T01:49:38.9118724Z データベースに保存中...
+2025-12-27T01:49:38.9118912Z 
+2025-12-27T01:49:38.9119947Z [90mstdout[2m | app/api/newsletter/route.test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns success for valid email
+2025-12-27T01:49:38.9143252Z [22m[39m保存成功: mock-id
+2025-12-27T01:49:38.9143701Z 
+2025-12-27T01:49:38.9144771Z [90mstdout[2m | app/api/newsletter/route.test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns success for valid email
+2025-12-27T01:49:38.9145789Z [22m[39m=== メルマガ登録API終了 ===
+2025-12-27T01:49:38.9146078Z 
+2025-12-27T01:49:38.9147090Z [90mstdout[2m | app/api/newsletter/route.test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns 400 for empty email
+2025-12-27T01:49:38.9148048Z [22m[39m=== メルマガ登録API開始 ===
+2025-12-27T01:49:38.9148324Z 
+2025-12-27T01:49:38.9149368Z [90mstdout[2m | app/api/newsletter/route.test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns 400 for empty email
+2025-12-27T01:49:38.9150443Z [22m[39m受信したメールアドレス: [90mundefined[39m
+2025-12-27T01:49:38.9151069Z エラー: メールアドレスが空
+2025-12-27T01:49:38.9151272Z 
+2025-12-27T01:49:38.9186881Z [90mstdout[2m | app/api/newsletter/route.test.ts[2m > [22m[2mPOST /api/newsletter[2m > [22m[2mreturns 400 for empty email
+2025-12-27T01:49:38.9187924Z [22m[39m=== メルマガ登録API終了 ===
+2025-12-27T01:49:38.9188208Z 
+2025-12-27T01:49:38.9247566Z  [32m✓[39m app/api/newsletter/route.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+2025-12-27T01:49:38.9889141Z  [32m✓[39m lib/prisma.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 4[2mms[22m[39m
+2025-12-27T01:49:39.1050345Z [90mstdout[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:49:39.1084505Z [22m[39m=== お問い合わせAPI開始 ===
+2025-12-27T01:49:39.1085228Z 
+2025-12-27T01:49:39.1147284Z [90mstderr[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:49:39.1152337Z [22m[39m=== お問い合わせエラー詳細 ===
+2025-12-27T01:49:39.1157844Z エラーメッセージ: Error: [vitest] No "default" export is defined on the "nodemailer" mock. Did you forget to return it from "vi.mock"?
+2025-12-27T01:49:39.1163044Z If you need to partially mock a module, you can use "importOriginal" helper inside:
+2025-12-27T01:49:39.1168358Z 
+2025-12-27T01:49:39.1171664Z     at VitestMocker.createError [90m(file:///home/runner/work/web_coreL/web_coreL/frontend/[39mnode_modules/[4mvitest[24m/dist/chunks/startModuleRunner.DpqpB8k3.js:311:17[90m)[39m
+2025-12-27T01:49:39.1176010Z     at Object.get [90m(file:///home/runner/work/web_coreL/web_coreL/frontend/[39mnode_modules/[4mvitest[24m/dist/chunks/startModuleRunner.DpqpB8k3.js:384:16[90m)[39m
+2025-12-27T01:49:39.1182890Z     at Module.POST [90m(/home/runner/work/web_coreL/web_coreL/frontend/[39mapp/api/contact/route.ts:46:25[90m)[39m
+2025-12-27T01:49:39.1184927Z [90mstdout[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2msucceeds with valid payload
+2025-12-27T01:49:39.1186979Z [90m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m
+2025-12-27T01:49:39.1188651Z     at [90m/home/runner/work/web_coreL/web_coreL/frontend/[39mapp/api/contact/route_test.ts:26:17
+2025-12-27T01:49:39.1190464Z     at [90mfile:///home/runner/work/web_coreL/web_coreL/frontend/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:915:20 {
+2025-12-27T01:49:39.1192757Z   codeFrame: [32m'vi.mock(import("nodemailer"), async (importOriginal) => {\n'[39m +
+2025-12-27T01:49:39.1194423Z [22m[39m受信したデータ: { name: [32m'Taro'[39m, email: [32m'taro@example.com'[39m, messageLength: [33m2[39m }
+2025-12-27T01:49:39.1195736Z メール送信準備中...
+2025-12-27T01:49:39.1196370Z 送信元: test@example.com
+2025-12-27T01:49:39.1197028Z 送信先: test@example.com
+2025-12-27T01:49:39.1197464Z 
+2025-12-27T01:49:39.1200534Z     [32m'  const actual = await importOriginal()\n'[39m +
+2025-12-27T01:49:39.1202238Z     [32m'  return {\n'[39m +
+2025-12-27T01:49:39.1203319Z     [32m'    ...actual,\n'[39m +
+2025-12-27T01:49:39.1205309Z     [32m'    // your mocked methods\n'[39m +
+2025-12-27T01:49:39.1208152Z     [32m'  }\n'[39m +
+2025-12-27T01:49:39.1210300Z     [32m'})'[39m
+2025-12-27T01:49:39.1211419Z }
+2025-12-27T01:49:39.1214708Z エラースタック: Error: [vitest] No "default" export is defined on the "nodemailer" mock. Did you forget to return it from "vi.mock"?
+2025-12-27T01:49:39.1217208Z If you need to partially mock a module, you can use "importOriginal" helper inside:
+2025-12-27T01:49:39.1218530Z 
+2025-12-27T01:49:39.1220444Z     at VitestMocker.createError (file:///home/runner/work/web_coreL/web_coreL/frontend/node_modules/vitest/dist/chunks/startModuleRunner.DpqpB8k3.js:311:17)
+2025-12-27T01:49:39.1224035Z     at Object.get (file:///home/runner/work/web_coreL/web_coreL/frontend/node_modules/vitest/dist/chunks/startModuleRunner.DpqpB8k3.js:384:16)
+2025-12-27T01:49:39.1226756Z     at Module.POST (/home/runner/work/web_coreL/web_coreL/frontend/app/api/contact/route.ts:46:25)
+2025-12-27T01:49:39.1227760Z     at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-12-27T01:49:39.1228675Z     at /home/runner/work/web_coreL/web_coreL/frontend/app/api/contact/route_test.ts:26:17
+2025-12-27T01:49:39.1229829Z     at file:///home/runner/work/web_coreL/web_coreL/frontend/node_modules/@vitest/runner/dist/index.js:915:20
+2025-12-27T01:49:39.1230411Z 
+2025-12-27T01:49:39.1288343Z [90mstdout[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mreturns 400 if required fields missing
+2025-12-27T01:49:39.1289877Z [22m[39m=== お問い合わせAPI開始 ===
+2025-12-27T01:49:39.1290532Z 
+2025-12-27T01:49:39.1300573Z [90mstdout[2m | app/api/contact/route.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mreturns 400 if required fields missing
+2025-12-27T01:49:39.1302153Z [22m[39m受信したデータ: { name: [32m''[39m, email: [32m''[39m, messageLength: [33m0[39m }
+2025-12-27T01:49:39.1302875Z エラー: 必須フィールドが空
+2025-12-27T01:49:39.1303077Z 
+2025-12-27T01:49:39.1320372Z  [31m❯[39m app/api/contact/route.test.ts [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 31[2mms[22m[39m
+2025-12-27T01:49:39.1321764Z [31m     [31m×[31m succeeds with valid payload[39m[32m 27[2mms[22m[39m
+2025-12-27T01:49:39.1322751Z      [32m✓[39m returns 400 if required fields missing[32m 2[2mms[22m[39m
+2025-12-27T01:49:39.1484829Z [90mstdout[2m | app/api/test-db/route.test.ts[2m > [22m[2mGET /api/test-db[2m > [22m[2mreturns success and newsletters list
+2025-12-27T01:49:39.1490706Z [22m[39m=== データベーステスト開始 ===
+2025-12-27T01:49:39.1491258Z DATABASE_URL: 未設定
+2025-12-27T01:49:39.1491469Z 
+2025-12-27T01:49:39.1492447Z [90mstdout[2m | app/api/test-db/route.test.ts[2m > [22m[2mGET /api/test-db[2m > [22m[2mreturns success and newsletters list
+2025-12-27T01:49:39.1493996Z [22m[39m✓ データベース接続成功
+2025-12-27T01:49:39.1494237Z 
+2025-12-27T01:49:39.1495274Z [90mstdout[2m | app/api/test-db/route.test.ts[2m > [22m[2mGET /api/test-db[2m > [22m[2mreturns success and newsletters list
+2025-12-27T01:49:39.1496417Z [22m[39m✓ Newsletter件数: [33m2[39m
+2025-12-27T01:49:39.1496738Z 
+2025-12-27T01:49:39.1503877Z [90mstdout[2m | app/api/test-db/route.test.ts[2m > [22m[2mGET /api/test-db[2m > [22m[2mreturns success and newsletters list
+2025-12-27T01:49:39.1506471Z [22m[39m✓ Newsletter一覧: [ { id: [32m'a'[39m, email: [32m'a@example.com'[39m } ]
+2025-12-27T01:49:39.1506980Z 
+2025-12-27T01:49:39.1531554Z  [32m✓[39m app/api/test-db/route.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 7[2mms[22m[39m
+2025-12-27T01:49:39.2560332Z 
+2025-12-27T01:49:39.2561720Z [31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Suites 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+2025-12-27T01:49:39.2562199Z 
+2025-12-27T01:49:39.2563102Z [41m[1m FAIL [22m[49m app/posts/[slug]/page.test.tsx[2m [ app/posts/[slug]/page.test.tsx ][22m
+2025-12-27T01:49:39.2564702Z [41m[1m FAIL [22m[49m app/posts/[slug]/page_test.tsx[2m [ app/posts/[slug]/page_test.tsx ][22m
+2025-12-27T01:49:39.2573765Z [31m[1mError[22m: Cannot find package '@/components/Header' imported from '/home/runner/work/web_coreL/web_coreL/frontend/app/posts/[slug]/page.tsx'[39m
+2025-12-27T01:49:39.2583681Z [36m [2m❯[22m app/posts/[slug]/page.tsx:[2m4:1[22m[39m
+2025-12-27T01:49:39.2642348Z     [90m  2| [39m[35mimport[39m [33mImage[39m [35mfrom[39m [32m'next/image'[39m[33m;[39m
+2025-12-27T01:49:39.2644502Z     [90m  3| [39mimport { getPostBySlug, getPosts, getPopularPosts } from '@/lib/wordpr…
+2025-12-27T01:49:39.2646586Z     [90m  4| [39m[35mimport[39m [33mHeader[39m [35mfrom[39m [32m'@/components/Header'[39m[33m;[39m
+2025-12-27T01:49:39.2647708Z     [90m   | [39m[31m^[39m
+2025-12-27T01:49:39.2650226Z     [90m  5| [39m[35mimport[39m [33mFooter[39m [35mfrom[39m [32m'@/components/Footer'[39m[33m;[39m
+2025-12-27T01:49:39.2651554Z     [90m  6| [39m[35mimport[39m [33mArticleCard[39m [35mfrom[39m [32m'@/components/ArticleCard'[39m[33m;[39m
+2025-12-27T01:49:39.2652673Z [90m [2m❯[22m app/posts/[slug]/page_test.tsx:[2m9:1[22m[39m
+2025-12-27T01:49:39.2653072Z 
+2025-12-27T01:49:39.2653663Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯[22m[39m
+2025-12-27T01:49:39.2654001Z 
+2025-12-27T01:49:39.2654011Z 
+2025-12-27T01:49:39.2656018Z [31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+2025-12-27T01:49:39.2656416Z 
+2025-12-27T01:49:39.2657351Z [41m[1m FAIL [22m[49m app/api/contact/route.test.ts[2m > [22mPOST /api/contact[2m > [22msucceeds with valid payload
+2025-12-27T01:49:39.2659897Z [41m[1m FAIL [22m[49m app/api/contact/route_test.ts[2m > [22mPOST /api/contact[2m > [22msucceeds with valid payload
+2025-12-27T01:49:39.2663189Z [31m[1mAssertionError[22m: expected false to be true // Object.is equality[39m
+2025-12-27T01:49:39.2665096Z 
+2025-12-27T01:49:39.2665362Z [32m- Expected[39m
+2025-12-27T01:49:39.2665787Z [31m+ Received[39m
+2025-12-27T01:49:39.2665988Z 
+2025-12-27T01:49:39.2666168Z [32m- true[39m
+2025-12-27T01:49:39.2666536Z [31m+ false[39m
+2025-12-27T01:49:39.2666741Z 
+2025-12-27T01:49:39.2667239Z [36m [2m❯[22m app/api/contact/route_test.ts:[2m27:33[22m[39m
+2025-12-27T01:49:39.2668174Z     [90m 25| [39m    const req = { json: async () => ({ name: 'Taro', email: 'taro@exam…
+2025-12-27T01:49:39.2669288Z     [90m 26| [39m    [35mconst[39m res [33m=[39m [35mawait[39m route[33m.[39m[33mPOST[39m(req)[33m;[39m
+2025-12-27T01:49:39.2670815Z     [90m 27| [39m    [34mexpect[39m(res[33m.[39mpayload[33m.[39msuccess)[33m.[39m[34mtoBe[39m([35mtrue[39m)[33m;[39m
+2025-12-27T01:49:39.2671695Z     [90m   | [39m                                [31m^[39m
+2025-12-27T01:49:39.2672700Z     [90m 28| [39m    [34mexpect[39m(res[33m.[39mpayload)[33m.[39m[34mtoHaveProperty[39m([32m'messageId'[39m)[33m;[39m
+2025-12-27T01:49:39.2673753Z     [90m 29| [39m  })[33m;[39m
+2025-12-27T01:49:39.2674009Z 
+2025-12-27T01:49:39.2674393Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯[22m[39m
+2025-12-27T01:49:39.2674702Z 
+2025-12-27T01:49:39.2674737Z 
+2025-12-27T01:49:39.2675450Z [2m Test Files [22m [1m[31m4 failed[39m[22m[2m | [22m[1m[32m8 passed[39m[22m[90m (12)[39m
+2025-12-27T01:49:39.2676622Z [2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m12 passed[39m[22m[90m (14)[39m
+2025-12-27T01:49:39.2677383Z [2m   Start at [22m 01:49:37
+2025-12-27T01:49:39.2678445Z [2m   Duration [22m 1.27s[2m (transform 362ms, setup 0ms, import 559ms, tests 121ms, environment 2ms)[22m
+2025-12-27T01:49:39.2679053Z 
+2025-12-27T01:49:39.2679086Z 
+2025-12-27T01:49:39.2707578Z ##[error]AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ app/api/contact/route_test.ts:27:33
+
+
+2025-12-27T01:49:39.2718528Z 
+2025-12-27T01:49:39.2720380Z ##[error]AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ app/api/contact/route_test.ts:27:33
+
+
+2025-12-27T01:49:39.2721336Z 
+2025-12-27T01:49:39.2723412Z ##[error]Error: Cannot find package '@/components/Header' imported from '/home/runner/work/web_coreL/web_coreL/frontend/app/posts/[slug]/page.tsx'
+ ❯ app/posts/[slug]/page.tsx:4:1
+ ❯ app/posts/[slug]/page_test.tsx:9:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_MODULE_NOT_FOUND' }
+
+2025-12-27T01:49:39.2725038Z 
+2025-12-27T01:49:39.2727122Z ##[error]Error: Cannot find package '@/components/Header' imported from '/home/runner/work/web_coreL/web_coreL/frontend/app/posts/[slug]/page.tsx'
+ ❯ app/posts/[slug]/page.tsx:4:1
+ ❯ app/posts/[slug]/page_test.tsx:9:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_MODULE_NOT_FOUND' }
+
+2025-12-27T01:49:39.2956299Z ##[error]Process completed with exit code 1.
+2025-12-27T01:49:39.3054085Z Post job cleanup.
+2025-12-27T01:49:39.4075390Z [command]/usr/bin/git version
+2025-12-27T01:49:39.4126828Z git version 2.52.0
+2025-12-27T01:49:39.4176191Z Temporarily overriding HOME='/home/runner/work/_temp/a58af386-c9a8-402d-a982-8be57d5b786f' before making global git config changes
+2025-12-27T01:49:39.4177651Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-27T01:49:39.4183131Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/web_coreL/web_coreL
+2025-12-27T01:49:39.4559920Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-27T01:49:39.4603716Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-27T01:49:39.5086762Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-27T01:49:39.5120756Z http.https://github.com/.extraheader
+2025-12-27T01:49:39.5140736Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-12-27T01:49:39.5186553Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-27T01:49:39.5458932Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-27T01:49:39.5511886Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-27T01:49:39.5903041Z Cleaning up orphan processes

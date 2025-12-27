@@ -7,9 +7,11 @@ process.env.EMAIL_TO = 'test@example.com';
 
 // Mock nodemailer
 vi.mock('nodemailer', () => ({
-  createTransport: vi.fn().mockReturnValue({
-    sendMail: vi.fn().mockResolvedValue({ messageId: 'm-id' }),
-  }),
+  default: {
+    createTransport: vi.fn().mockReturnValue({
+      sendMail: vi.fn().mockResolvedValue({ messageId: 'm-id' }),
+    }),
+  },
 }));
 
 vi.mock('next/server', () => ({

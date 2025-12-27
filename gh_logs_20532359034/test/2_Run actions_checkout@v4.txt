@@ -1,0 +1,72 @@
+﻿2025-12-27T01:17:18.5121609Z ##[group]Run actions/checkout@v4
+2025-12-27T01:17:18.5122457Z with:
+2025-12-27T01:17:18.5122856Z   repository: TAKE4T/web_coreL
+2025-12-27T01:17:18.5123505Z   token: ***
+2025-12-27T01:17:18.5123879Z   ssh-strict: true
+2025-12-27T01:17:18.5124569Z   ssh-user: git
+2025-12-27T01:17:18.5124979Z   persist-credentials: true
+2025-12-27T01:17:18.5125433Z   clean: true
+2025-12-27T01:17:18.5125829Z   sparse-checkout-cone-mode: true
+2025-12-27T01:17:18.5126310Z   fetch-depth: 1
+2025-12-27T01:17:18.5126701Z   fetch-tags: false
+2025-12-27T01:17:18.5127426Z   show-progress: true
+2025-12-27T01:17:18.5127961Z   lfs: false
+2025-12-27T01:17:18.5128327Z   submodules: false
+2025-12-27T01:17:18.5128735Z   set-safe-directory: true
+2025-12-27T01:17:18.5129503Z ##[endgroup]
+2025-12-27T01:17:18.6273599Z Syncing repository: TAKE4T/web_coreL
+2025-12-27T01:17:18.6276214Z ##[group]Getting Git version info
+2025-12-27T01:17:18.6277717Z Working directory is '/home/runner/work/web_coreL/web_coreL'
+2025-12-27T01:17:18.6280288Z [command]/usr/bin/git version
+2025-12-27T01:17:18.6373353Z git version 2.52.0
+2025-12-27T01:17:18.6405459Z ##[endgroup]
+2025-12-27T01:17:18.6419495Z Temporarily overriding HOME='/home/runner/work/_temp/4b35fdcf-99e6-4b89-8eca-03ae967982f3' before making global git config changes
+2025-12-27T01:17:18.6422984Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-27T01:17:18.6435008Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/web_coreL/web_coreL
+2025-12-27T01:17:18.6487568Z Deleting the contents of '/home/runner/work/web_coreL/web_coreL'
+2025-12-27T01:17:18.6595723Z ##[group]Initializing the repository
+2025-12-27T01:17:18.6596867Z [command]/usr/bin/git init /home/runner/work/web_coreL/web_coreL
+2025-12-27T01:17:18.6655974Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-27T01:17:18.6658048Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-27T01:17:18.6659436Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-27T01:17:18.6660675Z hint: call:
+2025-12-27T01:17:18.6661547Z hint:
+2025-12-27T01:17:18.6662289Z hint: 	git config --global init.defaultBranch <name>
+2025-12-27T01:17:18.6663196Z hint:
+2025-12-27T01:17:18.6664066Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-27T01:17:18.6665668Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-27T01:17:18.6667170Z hint:
+2025-12-27T01:17:18.6667913Z hint: 	git branch -m <name>
+2025-12-27T01:17:18.6668711Z hint:
+2025-12-27T01:17:18.6669750Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-27T01:17:18.6672988Z Initialized empty Git repository in /home/runner/work/web_coreL/web_coreL/.git/
+2025-12-27T01:17:18.6677707Z [command]/usr/bin/git remote add origin https://github.com/TAKE4T/web_coreL
+2025-12-27T01:17:18.6717660Z ##[endgroup]
+2025-12-27T01:17:18.6718875Z ##[group]Disabling automatic garbage collection
+2025-12-27T01:17:18.6721906Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-27T01:17:18.6753253Z ##[endgroup]
+2025-12-27T01:17:18.6754479Z ##[group]Setting up auth
+2025-12-27T01:17:18.6760832Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-27T01:17:18.6793781Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-27T01:17:18.7676556Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-27T01:17:18.7682175Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-27T01:17:18.7686867Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-27T01:17:18.7715584Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-27T01:17:18.7959266Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-27T01:17:18.7995629Z ##[endgroup]
+2025-12-27T01:17:18.7996869Z ##[group]Fetching the repository
+2025-12-27T01:17:18.8006414Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0e26a420d644dfc6eb905a9bcbc6883fb7cab9c7:refs/remotes/origin/main
+2025-12-27T01:17:19.1367524Z From https://github.com/TAKE4T/web_coreL
+2025-12-27T01:17:19.1371940Z  * [new ref]         0e26a420d644dfc6eb905a9bcbc6883fb7cab9c7 -> origin/main
+2025-12-27T01:17:19.1404819Z ##[endgroup]
+2025-12-27T01:17:19.1405983Z ##[group]Determining the checkout info
+2025-12-27T01:17:19.1407730Z ##[endgroup]
+2025-12-27T01:17:19.1412898Z [command]/usr/bin/git sparse-checkout disable
+2025-12-27T01:17:19.1532758Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-27T01:17:19.1539067Z ##[group]Checking out the ref
+2025-12-27T01:17:19.1540416Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-12-27T01:17:19.1654645Z Switched to a new branch 'main'
+2025-12-27T01:17:19.1701854Z branch 'main' set up to track 'origin/main'.
+2025-12-27T01:17:19.1705742Z ##[endgroup]
+2025-12-27T01:17:19.1734850Z [command]/usr/bin/git log -1 --format=%H
+2025-12-27T01:17:19.1774019Z 0e26a420d644dfc6eb905a9bcbc6883fb7cab9c7
