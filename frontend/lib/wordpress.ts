@@ -180,14 +180,14 @@ export async function getPosts(params: {
     // ページネーション用のカーソル計算（簡易版）
     const after = page > 1 ? btoa(`arrayconnection:${(page - 1) * perPage - 1}`) : undefined;
 
-    const data: any = await client.request(query, {
+    const data = await client.request<{ posts: { nodes: Post[] } }>(query, {
       first: perPage,
       after,
       categoryIn,
       search,
     });
 
-    const posts = data.posts.nodes || [];
+    const posts = data.posts?.nodes || [];
 
     // totalを取得（簡易版: 取得した投稿数をtotalとして使用）
     const total = posts.length;
@@ -266,7 +266,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       }
     `;
 
-    const data: any = await client.request(query, { slug });
+    const data = await client.request<{ post: Post | null }>(query, { slug });
     return data.post || null;
   } catch (error) {
     logger.error('Error fetching post by slug:', slug, error);
@@ -330,7 +330,7 @@ export async function getPostById(id: number): Promise<Post | null> {
       }
     `;
 
-    const data: any = await client.request(query, { id: id.toString() });
+    const data = await client.request<{ post: Post | null }>(query, { id: id.toString() });
     return data.post || null;
   } catch (error) {
     logger.error('Error fetching post by ID:', id, error);
@@ -359,8 +359,8 @@ export async function getCategories(): Promise<Category[]> {
       }
     `;
 
-    const data: any = await client.request(query);
-    return data.categories.nodes || [];
+    const data = await client.request<{ categories: { nodes: Category[] } }>(query);
+    return data.categories?.nodes || []; 
   } catch (error) {
     logger.error('Error fetching categories:', error);
     logger.error('GraphQL URL:', GRAPHQL_URL);
@@ -401,8 +401,8 @@ export async function getTags(): Promise<Tag[]> {
       }
     `;
 
-    const data: any = await client.request(query);
-    return data.tags.nodes || [];
+    const data = await client.request<{ tags: { nodes: Tag[] } }>(query);
+    return data.tags?.nodes || []; 
   } catch (error) {
     logger.error('Error fetching tags:', error);
     logger.error('GraphQL URL:', GRAPHQL_URL);
@@ -440,7 +440,7 @@ export async function getPageBySlug(slug: string): Promise<Page | null> {
       }
     `;
 
-    const data: any = await client.request(query, { slug });
+    const data = await client.request<{ page: Page | null }>(query, { slug });
     return data.page || null;
   } catch (error) {
     logger.error('Error fetching page by slug:', slug, error);
@@ -481,8 +481,8 @@ export async function getPages(): Promise<Page[]> {
       }
     `;
 
-    const data: any = await client.request(query);
-    return data.pages.nodes || [];
+    const data = await client.request<{ pages: { nodes: Page[] } }>(query);
+    return data.pages?.nodes || [];
   } catch (error) {
     logger.error('Error fetching pages:', error);
     logger.error('GraphQL URL:', GRAPHQL_URL);
