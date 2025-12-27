@@ -1,16 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
+import logger from '@/lib/logger';
 import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
-    console.log('=== お問い合わせAPI開始 ===');
+    logger.info('=== お問い合わせAPI開始 ===');
 
     const { name, email, message } = await request.json();
-    console.log('受信したデータ:', { name, email, messageLength: message?.length });
+    logger.debug('受信したデータ:', { name, email, messageLength: message?.length });
 
     // バリデーション
     if (!name || !email || !message) {
-      console.log('エラー: 必須フィールドが空');
+      logger.warn('エラー: 必須フィールドが空');
       return NextResponse.json(
         { error: '全てのフィールドを入力してください' },
         { status: 400 }
@@ -20,7 +21,7 @@ export async function POST(request: NextRequest) {
     // メールアドレスの形式チェック
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      console.log('エラー: メールアドレスの形式が不正');
+      logger.warn('エラー: メールアドレスの形式が不正');
       return NextResponse.json(
         { error: 'メールアドレスの形式が正しくありません' },
         { status: 400 }
@@ -29,18 +30,18 @@ export async function POST(request: NextRequest) {
 
     // 環境変数チェック
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      console.error('エラー: メール設定が未設定');
-      console.error('EMAIL_USER:', process.env.EMAIL_USER ? '設定済み' : '未設定');
-      console.error('EMAIL_PASS:', process.env.EMAIL_PASS ? '設定済み' : '未設定');
+      logger.error('エラー: メール設定が未設定');
+      logger.error('EMAIL_USER:', process.env.EMAIL_USER ? '設定済み' : '未設定');
+      logger.error('EMAIL_PASS:', process.env.EMAIL_PASS ? '設定済み' : '未設定');
       return NextResponse.json(
         { error: 'メール送信設定が完了していません。管理者にお問い合わせください。' },
         { status: 500 }
       );
     }
 
-    console.log('メール送信準備中...');
-    console.log('送信元:', process.env.EMAIL_USER);
-    console.log('送信先:', process.env.EMAIL_TO || 'take4.farm@gmail.com');
+    logger.debug('メール送信準備中...');
+    logger.debug('送信元:', process.env.EMAIL_USER);
+    logger.debug('送信先:', process.env.EMAIL_TO || 'take4.farm@gmail.com');
 
     // Nodemailerトランスポーター設定（UTF-8対応）
     const transporter = nodemailer.createTransport({
@@ -119,13 +120,13 @@ ${message}
       `,
     };
 
-    console.log('メール送信中...');
+    logger.info('メール送信中...');
 
     // メール送信
     const info = await transporter.sendMail(mailOptions);
 
-    console.log('メール送信成功:', info.messageId);
-    console.log('=== お問い合わせAPI成功 ===');
+    logger.info('メール送信成功:', info.messageId);
+    logger.info('=== お問い合わせAPI成功 ===');
 
     return NextResponse.json(
       {
@@ -137,9 +138,9 @@ ${message}
     );
 
   } catch (error) {
-    console.error('=== お問い合わせエラー詳細 ===');
-    console.error('エラーメッセージ:', error);
-    console.error('エラースタック:', error instanceof Error ? error.stack : 'スタックなし');
+    logger.error('=== お問い合わせエラー詳細 ===');
+    logger.error('エラーメッセージ:', error);
+    logger.error('エラースタック:', error instanceof Error ? error.stack : 'スタックなし');
 
     // エラーの詳細を返す（開発環境のみ）
     const errorMessage = error instanceof Error ? error.message : '不明なエラー';

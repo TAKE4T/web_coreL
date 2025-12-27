@@ -1,5 +1,6 @@
 'use client';
 
+import logger from '@/lib/logger';
 import { useState, FormEvent } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -21,7 +22,7 @@ export default function ContactPage() {
     setSubmitStatus(null);
 
     try {
-      console.log('お問い合わせ送信:', formData);
+      logger.debug('お問い合わせ送信:', formData);
 
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -31,9 +32,9 @@ export default function ContactPage() {
         body: JSON.stringify(formData),
       });
 
-      console.log('レスポンスステータス:', response.status);
+      logger.debug('レスポンスステータス:', response.status);
       const data = await response.json();
-      console.log('レスポンスデータ:', data);
+      logger.debug('レスポンスデータ:', data);
 
       if (response.ok) {
         setSubmitStatus('success');
@@ -44,11 +45,11 @@ export default function ContactPage() {
         const errorMessage = data.error || 'お問い合わせの送信に失敗しました。';
         const details = data.details ? `\n詳細: ${data.details}` : '';
         setSubmitMessage(errorMessage + details);
-        console.error('エラー詳細:', data);
+        logger.error('エラー詳細:', data);
       }
     } catch (error) {
       setSubmitStatus('error');
-      console.error('キャッチしたエラー:', error);
+      logger.error('キャッチしたエラー:', error);
       setSubmitMessage(
         'エラーが発生しました。再度お試しください。\n' +
         (error instanceof Error ? error.message : String(error))
