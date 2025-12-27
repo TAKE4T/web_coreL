@@ -8,17 +8,12 @@ vi.mock('next/server', () => ({
 }));
 
 // Mock PrismaClient
-vi.mock('@prisma/client', () => {
-  const newsletter = {
-    upsert: vi.fn().mockResolvedValue({ id: 'mock-id' }),
-  };
-  return {
-    PrismaClient: vi.fn().mockImplementation(() => ({
-      newsletter,
-      $disconnect: vi.fn().mockResolvedValue(undefined),
-    })),
-  };
-});
+vi.mock('@prisma/client', () => ({
+  PrismaClient: class {
+    newsletter = { upsert: vi.fn().mockResolvedValue({ id: 'mock-id' }) };
+    $disconnect = vi.fn().mockResolvedValue(undefined);
+  },
+}));
 
 import * as route from './route';
 

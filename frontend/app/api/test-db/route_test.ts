@@ -1,14 +1,14 @@
 import { describe, it, expect, vi } from 'vitest';
 
 vi.mock('@prisma/client', () => ({
-  PrismaClient: vi.fn().mockImplementation(() => ({
-    $connect: vi.fn().mockResolvedValue(undefined),
-    $disconnect: vi.fn().mockResolvedValue(undefined),
-    newsletter: {
+  PrismaClient: class {
+    $connect = vi.fn().mockResolvedValue(undefined);
+    $disconnect = vi.fn().mockResolvedValue(undefined);
+    newsletter = {
       count: vi.fn().mockResolvedValue(2),
       findMany: vi.fn().mockResolvedValue([{ id: 'a', email: 'a@example.com' }]),
-    },
-  })),
+    };
+  },
 }));
 
 vi.mock('next/server', () => ({ NextResponse: { json: (payload: any) => payload } }));

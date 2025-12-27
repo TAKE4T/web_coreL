@@ -1,5 +1,10 @@
 import { describe, it, expect, vi } from 'vitest';
 
+// Set required env vars for the contact API
+process.env.EMAIL_USER = 'test@example.com';
+process.env.EMAIL_PASS = 'pass';
+process.env.EMAIL_TO = 'test@example.com';
+
 // Mock nodemailer
 vi.mock('nodemailer', () => ({
   createTransport: vi.fn().mockReturnValue({

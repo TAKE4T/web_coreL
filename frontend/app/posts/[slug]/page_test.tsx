@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 
-vi.mock('../../../lib/wordpress', async () => {
+vi.mock('@/lib/wordpress', async () => {
   return {
     getPostBySlug: vi.fn().mockResolvedValue({ title: 'T', excerpt: 'ex', content: 'c' }),
   };
