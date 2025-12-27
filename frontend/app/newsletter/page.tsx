@@ -1,5 +1,6 @@
 'use client';
 
+import logger from '@/lib/logger';
 import { useState, FormEvent } from 'react';
 
 export default function NewsletterPage() {
@@ -13,7 +14,7 @@ export default function NewsletterPage() {
     setSubmitMessage('');
 
     try {
-      console.log('メルマガ登録リクエスト送信:', email);
+      logger.debug('メルマガ登録リクエスト送信:', email);
       const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: {
@@ -22,9 +23,9 @@ export default function NewsletterPage() {
         body: JSON.stringify({ email }),
       });
 
-      console.log('レスポンスステータス:', response.status);
+      logger.debug('レスポンスステータス:', response.status);
       const data = await response.json();
-      console.log('レスポンスデータ:', data);
+      logger.debug('レスポンスデータ:', data);
 
       if (response.ok) {
         setSubmitMessage('メルマガ登録ありがとうございます！');
@@ -32,10 +33,10 @@ export default function NewsletterPage() {
       } else {
         const errorMessage = data.error || '登録に失敗しました。再度お試しください。';
         setSubmitMessage(errorMessage);
-        console.error('エラー詳細:', data);
+        logger.error('エラー詳細:', data);
       }
     } catch (error) {
-      console.error('キャッチしたエラー:', error);
+      logger.error('キャッチしたエラー:', error);
       setSubmitMessage('エラーが発生しました。再度お試しください。: ' + (error instanceof Error ? error.message : String(error)));
     } finally {
       setIsSubmitting(false);

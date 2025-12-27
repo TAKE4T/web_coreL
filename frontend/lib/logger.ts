@@ -1,0 +1,18 @@
+const isProd = process.env.NODE_ENV === 'production';
+
+const logger = {
+  debug: (...args: unknown[]) => {
+    if (!isProd) console.debug(...args);
+  },
+  info: (...args: unknown[]) => {
+    if (!isProd) console.info(...args);
+  },
+  warn: (...args: unknown[]) => {
+    console.warn(...args);
+  },
+  error: (...args: unknown[]) => {
+    console.error(...args);
+  },
+};
+
+export default logger;

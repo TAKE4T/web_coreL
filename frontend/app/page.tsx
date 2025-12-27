@@ -1,4 +1,5 @@
 import { getPosts, getCategories } from '@/lib/wordpress';
+import logger from '@/lib/logger';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ArticleCard from '@/components/ArticleCard';
@@ -12,9 +13,9 @@ export default async function Home() {
 
   // デバッグ情報（開発環境のみ）
   if (process.env.NODE_ENV === 'development') {
-    console.log('WordPress GraphQL URL:', process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL);
-    console.log('取得した記事数:', posts.length, '/ 合計:', total);
-    console.log('カテゴリー数:', categories.length);
+    logger.debug('WordPress GraphQL URL:', process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL);
+    logger.debug('取得した記事数:', posts.length, '/ 合計:', total);
+    logger.debug('カテゴリー数:', categories.length);
   }
 
   // 記事がない場合の警告
