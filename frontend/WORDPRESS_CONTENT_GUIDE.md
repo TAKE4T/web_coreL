@@ -53,8 +53,8 @@ https://your-domain.com/posts/[記事のスラッグ]
 1. WordPressダッシュボード
 2. **投稿 → カテゴリー** をクリック
 3. 以下を入力:
-  - **名前**: カテゴリー名（例: 経営・事業推進）
-  - **スラッグ**: URLに使用される文字列（例: business-management）
+  - **名前**: カテゴリー名（例: UX）
+  - **スラッグ**: URLに使用される文字列（例: ux）
    - **説明**: カテゴリーの説明（オプション）
 4. 「新規カテゴリーを追加」をクリック
 
@@ -65,51 +65,51 @@ https://your-domain.com/category/[カテゴリースラッグ]
 ```
 
 例:
-- カテゴリー名: 経営・事業推進
-- スラッグ: `business-management`
-- URL: `https://your-domain.com/category/business-management`
+- カテゴリー名: UX
+- スラッグ: `ux`
+- URL: `https://your-domain.com/category/ux`
 
 ### ヘッダーに表示されるカテゴリー
 
 現在、ヘッダーには以下のカテゴリーが表示されます:
 
-- 経営・事業推進 (`/category/business-management`)
-- 生成AI・コア技術 (`/category/ai-deep-learning`)
-- Backend & DevOps (`/category/backend-devops`)
-- Data Engineering (`/category/data-engineering`)
-- Modern Frontend (`/category/modern-frontend`)
-- インフラ・ネットワーク (`/category/infrastructure-network`)
-- Data Science (`/category/data-science`)
-- クリエイティブ・ドメイン (`/category/creative-domain`)
+- UX (`/category/ux`)
+- UI (`/category/ui`)
+- API (`/category/api`)
+- DB (`/category/db`)
+- TDD (`/category/tdd`)
+- infra (`/category/infra`)
+- Data Science & AI/ML (`/category/data-science-ml`)
+- Creative & Domain (`/category/creative-domain`)
 
 **これらのスラッグでカテゴリーを作成すると、自動的にリンクが機能します。**
 
 ### 推奨カテゴリ設計（子テーマ・特集）
 
-- **経営・事業推進**（`business-management`）
-  - 子テーマ: チームビルディング、要件定義、予算/コスト管理、リスク管理、提案・折衝、経営判断
-  - 特集: 「スケールする事業設計」「BtoB事業の勝ち筋」「PMFまでの実務」
-- **生成AI・コア技術**（`ai-deep-learning`）
-  - 子テーマ: LLM API活用、RAG、LangChain/LangGraph、Fine-tuning、Local LLM、画像生成、Prompt Engineering
-  - 特集: 「生成AI導入ロードマップ」「RAG実装テンプレ」「モデル選定の現実解」
-- **Backend & DevOps**（`backend-devops`）
-  - 子テーマ: API設計、認証基盤、CI/CD、Docker、テスト自動化、Serverless、マイクロサービス
-  - 特集: 「本番運用の自動化」「セキュアAPI設計」「スケール設計」
-- **Data Engineering**（`data-engineering`）
-  - 子テーマ: SQL設計、ETL、データクレンジング、Vector DB、OCR/PDF解析、Web Scraping
-  - 特集: 「社内データ基盤の作り方」「データ統合/移行」
-- **Modern Frontend**（`modern-frontend`）
-  - 子テーマ: Next.js、TypeScript、Tailwind CSS、RSC、Figma to Code、UX、パフォーマンス最適化
-  - 特集: 「高速UI設計」「デザインシステム構築」
-- **インフラ・ネットワーク**（`infrastructure-network`）
-  - 子テーマ: Linux運用、VPS、VPN、Nginx、セキュリティ設計、AWS、オンプレミス
-  - 特集: 「ゼロからのインフラ」「運用監視/障害対応」
-- **Data Science**（`data-science`）
-  - 子テーマ: 統計基礎、EDA、特徴量、評価指標、回帰/分類/クラスタリング、可視化
-  - 特集: 「KPI設計と分析」「意思決定のための統計」
-- **クリエイティブ・ドメイン**（`creative-domain`）
-  - 子テーマ: ライティング、インタビュー、UX構築、問題解決、医療/製造などドメイン知識
-  - 特集: 「業界別AI活用」「ストーリーテリング」
+- **UX**（`ux`）
+  - 子テーマ: ユーザー調査、ペルソナ、ユーザーフロー、IA設計、仮説検証
+  - 特集: 「UXリサーチ実践」「課題発見の型」
+- **UI**（`ui`）
+  - 子テーマ: デザインシステム、コンポーネント設計、Figma to Code、視認性/可読性
+  - 特集: 「UI改善ロードマップ」「デザインの再現性」
+- **API**（`api`）
+  - 子テーマ: REST/GraphQL設計、認証・認可、バージョニング、エラー設計
+  - 特集: 「堅牢なAPI設計」「運用しやすい仕様策定」
+- **DB**（`db`）
+  - 子テーマ: スキーマ設計、インデックス、SQL最適化、マイグレーション
+  - 特集: 「DB設計の定石」「性能改善」
+- **TDD**（`tdd`）
+  - 子テーマ: ユニット/統合テスト、テスト設計、モック、CI連携
+  - 特集: 「テスト戦略」「壊れない開発」
+- **infra**（`infra`）
+  - 子テーマ: Linux運用、Docker、監視/ログ、ネットワーク、セキュリティ
+  - 特集: 「運用基盤の作り方」「障害対応」
+- **Data Science & AI/ML**（`data-science-ml`）
+  - 子テーマ: EDA、特徴量、評価指標、モデル選定、MLOps、生成AI活用
+  - 特集: 「AI導入の実務」「データ駆動意思決定」
+- **Creative & Domain**（`creative-domain`）
+  - 子テーマ: ライティング、ストーリーテリング、業界知識、インタビュー
+  - 特集: 「ドメイン別AI活用」「伝わる文章術」
 
 ### カテゴリーの管理
 
@@ -364,7 +364,7 @@ WordPress側でAdvanced Custom Fields (ACF)プラグインを使用すると、�
 
 ### 必須設定
 
-1. ✅ カテゴリーを作成（business-management, ai-deep-learning, backend-devops, data-engineering, modern-frontend, infrastructure-network, data-science, creative-domain）
+1. ✅ カテゴリーを作成（ux, ui, api, db, tdd, infra, data-science-ml, creative-domain）
 2. ✅ 固定ページを作成（about, contact, privacy, terms など）
 3. ✅ 記事を作成（最低3件以上推奨）
 4. ✅ アイキャッチ画像を設定

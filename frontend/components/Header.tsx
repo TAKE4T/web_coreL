@@ -68,29 +68,29 @@ export default function Header() {
           <Link href="/" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
             トップ
           </Link>
-          <Link href="/category/business-management" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            経営・事業推進
+          <Link href="/category/ux" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            UX
           </Link>
-          <Link href="/category/ai-deep-learning" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            生成AI・コア技術
+          <Link href="/category/ui" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            UI
           </Link>
-          <Link href="/category/backend-devops" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            Backend & DevOps
+          <Link href="/category/api" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            API
           </Link>
-          <Link href="/category/data-engineering" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            Data Engineering
+          <Link href="/category/db" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            DB
           </Link>
-          <Link href="/category/modern-frontend" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            Modern Frontend
+          <Link href="/category/tdd" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            TDD
           </Link>
-          <Link href="/category/infrastructure-network" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            インフラ・ネットワーク
+          <Link href="/category/infra" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            infra
           </Link>
-          <Link href="/category/data-science" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            Data Science
+          <Link href="/category/data-science-ml" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            Data Science & AI/ML
           </Link>
           <Link href="/category/creative-domain" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            クリエイティブ・ドメイン
+            Creative & Domain
           </Link>
         </nav>
       </div>

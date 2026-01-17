@@ -13,43 +13,43 @@ export default function Footer() {
             <h3 className="mb-3 font-bold text-gray-900">カテゴリー</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/category/business-management" className="text-gray-600 hover:text-red-600">
-                  経営・事業推進
+                <Link href="/category/ux" className="text-gray-600 hover:text-red-600">
+                  UX
                 </Link>
               </li>
               <li>
-                <Link href="/category/ai-deep-learning" className="text-gray-600 hover:text-red-600">
-                  生成AI・コア技術
+                <Link href="/category/ui" className="text-gray-600 hover:text-red-600">
+                  UI
                 </Link>
               </li>
               <li>
-                <Link href="/category/backend-devops" className="text-gray-600 hover:text-red-600">
-                  Backend & DevOps
+                <Link href="/category/api" className="text-gray-600 hover:text-red-600">
+                  API
                 </Link>
               </li>
               <li>
-                <Link href="/category/data-engineering" className="text-gray-600 hover:text-red-600">
-                  Data Engineering
+                <Link href="/category/db" className="text-gray-600 hover:text-red-600">
+                  DB
                 </Link>
               </li>
               <li>
-                <Link href="/category/modern-frontend" className="text-gray-600 hover:text-red-600">
-                  Modern Frontend
+                <Link href="/category/tdd" className="text-gray-600 hover:text-red-600">
+                  TDD
                 </Link>
               </li>
               <li>
-                <Link href="/category/infrastructure-network" className="text-gray-600 hover:text-red-600">
-                  インフラ・ネットワーク
+                <Link href="/category/infra" className="text-gray-600 hover:text-red-600">
+                  infra
                 </Link>
               </li>
               <li>
-                <Link href="/category/data-science" className="text-gray-600 hover:text-red-600">
-                  Data Science
+                <Link href="/category/data-science-ml" className="text-gray-600 hover:text-red-600">
+                  Data Science & AI/ML
                 </Link>
               </li>
               <li>
                 <Link href="/category/creative-domain" className="text-gray-600 hover:text-red-600">
-                  クリエイティブ・ドメイン
+                  Creative & Domain
                 </Link>
               </li>
             </ul>
