@@ -53,8 +53,8 @@ https://your-domain.com/posts/[記事のスラッグ]
 1. WordPressダッシュボード
 2. **投稿 → カテゴリー** をクリック
 3. 以下を入力:
-  - **名前**: カテゴリー名（例: UX）
-  - **スラッグ**: URLに使用される文字列（例: ux）
+  - **名前**: カテゴリー名（例: UXデザイン）
+  - **スラッグ**: URLに使用される文字列（例: ux-design）
    - **説明**: カテゴリーの説明（オプション）
 4. 「新規カテゴリーを追加」をクリック
 
@@ -65,51 +65,55 @@ https://your-domain.com/category/[カテゴリースラッグ]
 ```
 
 例:
-- カテゴリー名: UX
-- スラッグ: `ux`
-- URL: `https://your-domain.com/category/ux`
+- カテゴリー名: UXデザイン
+- スラッグ: `ux-design`
+- URL: `https://your-domain.com/category/ux-design`
 
 ### ヘッダーに表示されるカテゴリー
 
 現在、ヘッダーには以下のカテゴリーが表示されます:
 
-- UX (`/category/ux`)
-- UI (`/category/ui`)
-- API (`/category/api`)
-- DB (`/category/db`)
-- TDD (`/category/tdd`)
-- infra (`/category/infra`)
-- Data Science & AI/ML (`/category/data-science-ml`)
-- Creative & Domain (`/category/creative-domain`)
+- UXデザイン (`/category/ux-design`)
+- UIデザイン (`/category/ui-design`)
+- APIデザイン (`/category/api-design`)
+- DB設計 (`/category/db-design`)
+- TDDテスト駆動 (`/category/tdd`)
+- インフラ (`/category/infra`)
+- データサイエンス+AI/機械学習 (`/category/data-science-ml`)
+- ライティング+業界 (`/category/writing-industry`)
+- スキル評価 (`/category/skill-assessment`)
 
 **これらのスラッグでカテゴリーを作成すると、自動的にリンクが機能します。**
 
 ### 推奨カテゴリ設計（子テーマ・特集）
 
-- **UX**（`ux`）
+- **UXデザイン**（`ux-design`）
   - 子テーマ: ユーザー調査、ペルソナ、ユーザーフロー、IA設計、仮説検証
   - 特集: 「UXリサーチ実践」「課題発見の型」
-- **UI**（`ui`）
+- **UIデザイン**（`ui-design`）
   - 子テーマ: デザインシステム、コンポーネント設計、Figma to Code、視認性/可読性
   - 特集: 「UI改善ロードマップ」「デザインの再現性」
-- **API**（`api`）
+- **APIデザイン**（`api-design`）
   - 子テーマ: REST/GraphQL設計、認証・認可、バージョニング、エラー設計
   - 特集: 「堅牢なAPI設計」「運用しやすい仕様策定」
-- **DB**（`db`）
+- **DB設計**（`db-design`）
   - 子テーマ: スキーマ設計、インデックス、SQL最適化、マイグレーション
   - 特集: 「DB設計の定石」「性能改善」
-- **TDD**（`tdd`）
+- **TDDテスト駆動**（`tdd`）
   - 子テーマ: ユニット/統合テスト、テスト設計、モック、CI連携
   - 特集: 「テスト戦略」「壊れない開発」
-- **infra**（`infra`）
+- **インフラ**（`infra`）
   - 子テーマ: Linux運用、Docker、監視/ログ、ネットワーク、セキュリティ
   - 特集: 「運用基盤の作り方」「障害対応」
-- **Data Science & AI/ML**（`data-science-ml`）
+- **データサイエンス+AI/機械学習**（`data-science-ml`）
   - 子テーマ: EDA、特徴量、評価指標、モデル選定、MLOps、生成AI活用
   - 特集: 「AI導入の実務」「データ駆動意思決定」
-- **Creative & Domain**（`creative-domain`）
+- **ライティング+業界**（`writing-industry`）
   - 子テーマ: ライティング、ストーリーテリング、業界知識、インタビュー
   - 特集: 「ドメイン別AI活用」「伝わる文章術」
+- **スキル評価**（`skill-assessment`）
+  - 子テーマ: スキルマップ、評価基準設計、ポートフォリオ、面談設計
+  - 特集: 「評価基準の作り方」「採用・育成の仕組み」
 
 ### カテゴリーの管理
 
@@ -364,7 +368,7 @@ WordPress側でAdvanced Custom Fields (ACF)プラグインを使用すると、�
 
 ### 必須設定
 
-1. ✅ カテゴリーを作成（ux, ui, api, db, tdd, infra, data-science-ml, creative-domain）
+1. ✅ カテゴリーを作成（ux-design, ui-design, api-design, db-design, tdd, infra, data-science-ml, writing-industry, skill-assessment）
 2. ✅ 固定ページを作成（about, contact, privacy, terms など）
 3. ✅ 記事を作成（最低3件以上推奨）
 4. ✅ アイキャッチ画像を設定

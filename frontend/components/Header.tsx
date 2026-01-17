@@ -68,29 +68,32 @@ export default function Header() {
           <Link href="/" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
             トップ
           </Link>
-          <Link href="/category/ux" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            UX
+          <Link href="/category/ux-design" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            UXデザイン
           </Link>
-          <Link href="/category/ui" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            UI
+          <Link href="/category/ui-design" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            UIデザイン
           </Link>
-          <Link href="/category/api" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            API
+          <Link href="/category/api-design" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            APIデザイン
           </Link>
-          <Link href="/category/db" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            DB
+          <Link href="/category/db-design" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            DB設計
           </Link>
           <Link href="/category/tdd" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            TDD
+            TDDテスト駆動
           </Link>
           <Link href="/category/infra" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            infra
+            インフラ
           </Link>
           <Link href="/category/data-science-ml" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            Data Science & AI/ML
+            データサイエンス+AI/機械学習
           </Link>
-          <Link href="/category/creative-domain" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
-            Creative & Domain
+          <Link href="/category/writing-industry" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            ライティング+業界
+          </Link>
+          <Link href="/category/skill-assessment" className="whitespace-nowrap px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">
+            スキル評価
           </Link>
         </nav>
       </div>

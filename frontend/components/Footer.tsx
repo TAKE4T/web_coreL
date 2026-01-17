@@ -13,43 +13,48 @@ export default function Footer() {
             <h3 className="mb-3 font-bold text-gray-900">カテゴリー</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/category/ux" className="text-gray-600 hover:text-red-600">
-                  UX
+                <Link href="/category/ux-design" className="text-gray-600 hover:text-red-600">
+                  UXデザイン
                 </Link>
               </li>
               <li>
-                <Link href="/category/ui" className="text-gray-600 hover:text-red-600">
-                  UI
+                <Link href="/category/ui-design" className="text-gray-600 hover:text-red-600">
+                  UIデザイン
                 </Link>
               </li>
               <li>
-                <Link href="/category/api" className="text-gray-600 hover:text-red-600">
-                  API
+                <Link href="/category/api-design" className="text-gray-600 hover:text-red-600">
+                  APIデザイン
                 </Link>
               </li>
               <li>
-                <Link href="/category/db" className="text-gray-600 hover:text-red-600">
-                  DB
+                <Link href="/category/db-design" className="text-gray-600 hover:text-red-600">
+                  DB設計
                 </Link>
               </li>
               <li>
                 <Link href="/category/tdd" className="text-gray-600 hover:text-red-600">
-                  TDD
+                  TDDテスト駆動
                 </Link>
               </li>
               <li>
                 <Link href="/category/infra" className="text-gray-600 hover:text-red-600">
-                  infra
+                  インフラ
                 </Link>
               </li>
               <li>
                 <Link href="/category/data-science-ml" className="text-gray-600 hover:text-red-600">
-                  Data Science & AI/ML
+                  データサイエンス+AI/機械学習
                 </Link>
               </li>
               <li>
-                <Link href="/category/creative-domain" className="text-gray-600 hover:text-red-600">
-                  Creative & Domain
+                <Link href="/category/writing-industry" className="text-gray-600 hover:text-red-600">
+                  ライティング+業界
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/skill-assessment" className="text-gray-600 hover:text-red-600">
+                  スキル評価
                 </Link>
               </li>
             </ul>
