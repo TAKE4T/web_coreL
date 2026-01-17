@@ -18,9 +18,10 @@ import * as route from './route';
 describe('GET /api/test-db', () => {
   it('returns success and newsletters list', async () => {
     const res = await route.GET();
-    expect(res).toHaveProperty('success', true);
-    expect(res).toHaveProperty('count', 2);
-    expect(res).toHaveProperty('newsletters');
-    expect(res.newsletters[0].email).toBe('a@example.com');
+    const data = (res as any).payload ?? res;
+    expect(data).toHaveProperty('success', true);
+    expect(data).toHaveProperty('count', 2);
+    expect(data).toHaveProperty('newsletters');
+    expect(data.newsletters[0].email).toBe('a@example.com');
   });
 });

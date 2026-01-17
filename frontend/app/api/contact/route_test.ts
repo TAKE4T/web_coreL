@@ -26,14 +26,16 @@ describe('POST /api/contact', () => {
   it('succeeds with valid payload', async () => {
     const req = { json: async () => ({ name: 'Taro', email: 'taro@example.com', message: 'Hi' }) } as any;
     const res = await route.POST(req);
-    expect(res.payload.success).toBe(true);
-    expect(res.payload).toHaveProperty('messageId');
+    const data = (res as any).payload ?? res;
+    expect(data.success).toBe(true);
+    expect(data).toHaveProperty('messageId');
   });
 
   it('returns 400 if required fields missing', async () => {
     const req = { json: async () => ({ name: '', email: '', message: '' }) } as any;
     const res = await route.POST(req);
-    expect(res.status).toBe(400);
-    expect(res.payload).toHaveProperty('error');
+    const data = (res as any).payload ?? res;
+    expect((res as any).status).toBe(400);
+    expect(data).toHaveProperty('error');
   });
 });

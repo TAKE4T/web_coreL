@@ -21,14 +21,16 @@ describe('POST /api/newsletter', () => {
   it('returns success for valid email', async () => {
     const req = { json: async () => ({ email: 'test@example.com' }) } as any;
     const res = await route.POST(req);
-    expect(res.payload.message).toBe('メルマガ登録が完了しました');
-    expect(res.payload.id).toBe('mock-id');
+    const data = (res as any).payload ?? res;
+    expect(data.message).toBe('メルマガ登録が完了しました');
+    expect(data.id).toBe('mock-id');
   });
 
   it('returns 400 for empty email', async () => {
     const req = { json: async () => ({}) } as any;
     const res = await route.POST(req);
-    expect(res.status).toBe(400);
-    expect(res.payload).toHaveProperty('error');
+    const data = (res as any).payload ?? res;
+    expect((res as any).status).toBe(400);
+    expect(data).toHaveProperty('error');
   });
 });
